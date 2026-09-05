@@ -70,11 +70,9 @@ export const portfolio = {
 export const socialLinks = [
   { name: "GitHub", href: "https://github.com/prathik0007", icon: "github" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/prathik-b73793351", icon: "linkedin" },
-  { name: "WhatsApp", href: "https://wa.me/919611914396", icon: "whatsapp" },
   { name: "Email", href: "mailto:prathikganiga202@gmail.com", icon: "mail" },
-  { name: "Instagram", href: "https://www.instagram.com/prathik._07/", icon: "instagram" },
-  { name: "LeetCode", href: "https://leetcode.com/u/Prathik07/", icon: "code" },
   { name: "Phone", href: "tel:+919611914396", icon: "phone" },
+  { name: "LeetCode", href: "https://leetcode.com/u/Prathik07/", icon: "code" },
 ] as const;
 
 export const navItems = [
