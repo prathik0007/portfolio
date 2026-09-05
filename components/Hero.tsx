@@ -9,12 +9,12 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-white py-12 lg:py-20">
-      {/* Ambient background waves and fluid lighting (matches reference layout) */}
+      {/* Ambient background waves and fluid lighting */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* Soft fluid blue wave in bottom right */}
-        <div className="absolute -bottom-24 -right-24 h-[550px] w-[550px] rounded-full bg-gradient-to-tl from-primary/15 via-sky-100/30 to-transparent blur-3xl" />
-        {/* Soft blue glow on top right behind avatar */}
-        <div className="absolute top-10 right-1/4 h-[420px] w-[420px] rounded-full bg-primary-light/60 blur-3xl" />
+        <div className="absolute -bottom-28 -right-28 h-[600px] w-[600px] rounded-full bg-gradient-to-tl from-primary/15 via-sky-100/30 to-transparent blur-3xl" />
+        {/* Soft blue glow behind center avatar */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 h-[450px] w-[450px] rounded-full bg-primary-light/50 blur-3xl" />
         {/* Constellation lines and dots decoration top left */}
         <svg
           className="absolute left-6 top-12 hidden h-48 w-48 text-primary/20 sm:block"
@@ -31,28 +31,29 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+      <div className="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-12">
+        {/* 3-Column Grid on Desktop: Text (5 cols), Avatar (4 cols), Info Card (3 cols) */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
           
-          {/* Left Column: text content & actions (5 cols on lg) */}
+          {/* Column 1: Hero Text & Actions (5 cols) */}
           <div className="animate-fade-in lg:col-span-5">
             {/* Greeting pill */}
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-light/80 px-4 py-1.5 text-sm font-semibold text-primary">
               <span aria-hidden="true">👋</span> {portfolio.greeting}
             </span>
 
-            {/* Name in bold sans-serif matching reference */}
+            {/* Name in bold modern sans-serif */}
             <h1 className="mt-4 font-sans text-4xl font-extrabold tracking-tight text-ink sm:text-5xl lg:text-6xl">
               {portfolio.name}
             </h1>
 
-            {/* Role subtitle: Full-Stack in primary blue, Developer in ink */}
+            {/* Role: Full-Stack in blue, Developer in ink */}
             <p className="mt-2 font-sans text-2xl font-bold tracking-tight sm:text-3xl">
               <span className="text-primary">{portfolio.role.split(" ")[0]}</span>{" "}
               <span className="text-ink">{portfolio.role.split(" ").slice(1).join(" ")}</span>
             </p>
 
-            {/* Bio introduction */}
+            {/* Bio */}
             <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
               {portfolio.introduction}
             </p>
@@ -87,39 +88,39 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Area: Profile picture in the center + Info card beside it (7 cols on lg) */}
-          <div className="relative flex flex-col items-center justify-center gap-8 md:flex-row md:items-center md:justify-center lg:col-span-7 lg:justify-end">
-            
-            {/* Center: Profile Picture with concentric orbit rings */}
-            <div className="relative flex-none">
-              {/* Outer decorative orbit rings matching reference */}
-              <div className="absolute -inset-6 rounded-full border border-primary/30 border-dashed pointer-events-none" />
-              <div className="absolute -inset-12 rounded-full border border-primary/15 pointer-events-none" />
+          {/* Column 2: Profile Picture (Centered in its own grid column, 4 cols) */}
+          <div className="flex items-center justify-center py-4 lg:col-span-4">
+            <div className="relative">
+              {/* Outer decorative orbit rings */}
+              <div className="absolute -inset-5 rounded-full border border-primary/30 border-dashed pointer-events-none" />
+              <div className="absolute -inset-10 rounded-full border border-primary/15 pointer-events-none" />
 
               {/* Floating accent dots in blue */}
-              <div className="absolute -top-3 right-8 h-3.5 w-3.5 rounded-full bg-primary shadow-sm" />
-              <div className="absolute -bottom-4 left-6 h-3.5 w-3.5 rounded-full border-2 border-primary" />
-              <div className="absolute top-1/2 -left-6 h-2 w-2 rounded-full bg-primary/60" />
+              <div className="absolute -top-2.5 right-6 h-3.5 w-3.5 rounded-full bg-primary shadow-sm" />
+              <div className="absolute -bottom-3 left-5 h-3.5 w-3.5 rounded-full border-2 border-primary" />
+              <div className="absolute top-1/2 -left-5 h-2 w-2 rounded-full bg-primary/60" />
 
               {/* Glowing ring */}
               <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary via-sky-400 to-primary-light opacity-30 blur-sm" />
 
               {/* Circular portrait avatar */}
-              <div className="relative h-64 w-64 overflow-hidden rounded-full border-[6px] border-white bg-surface-muted shadow-card-hover sm:h-80 sm:w-80 lg:h-[340px] lg:w-[340px]">
+              <div className="relative h-64 w-64 overflow-hidden rounded-full border-[6px] border-white bg-surface-muted shadow-card-hover sm:h-76 sm:w-76 lg:h-[320px] lg:w-[320px] xl:h-[350px] xl:w-[350px]">
                 <Image
                   src={portfolio.profileImagePath}
                   alt={`Portrait of ${portfolio.name}`}
                   fill
-                  sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 340px"
+                  sizes="(max-width: 640px) 256px, (max-width: 1024px) 300px, 350px"
                   className="object-cover object-[center_15%]"
                   priority
                   unoptimized
                 />
               </div>
             </div>
+          </div>
 
-            {/* Right: Floating Info Card (sits beside the avatar, completely uncovered) */}
-            <div className="w-full max-w-xs flex-none rounded-2xl border border-surface-border bg-white/95 p-5 shadow-card-hover backdrop-blur-sm sm:w-72">
+          {/* Column 3: Info Card (On its own grid side, completely separate, 3 cols) */}
+          <div className="flex items-center justify-center lg:col-span-3 lg:justify-start">
+            <div className="w-full max-w-[310px] rounded-2xl border border-surface-border bg-white p-5 shadow-card-hover">
               <ul className="flex flex-col gap-3.5">
                 {/* 1: College / Institution */}
                 <li className="flex items-center gap-3">
@@ -182,8 +183,8 @@ export default function Hero() {
                 </li>
               </ul>
             </div>
-
           </div>
+
         </div>
       </div>
     </section>

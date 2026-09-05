@@ -9,7 +9,7 @@ export type EducationEntry = {
   institution: string;
   university: string;
   years: string;
-  grade: string; // e.g. "CGPA: 8.67/10"
+  grade?: string;
 };
 
 export const education: EducationEntry[] = [
@@ -19,7 +19,6 @@ export const education: EducationEntry[] = [
     institution: "Sacred Heart College, Madanthyar",
     university: "Mangalore University",
     years: "2022 - 2025",
-    grade: "CGPA: 8.67/10",
   },
   {
     id: "edu-2",
@@ -27,6 +26,5 @@ export const education: EducationEntry[] = [
     institution: "N.M.A.M Institute of Technology, Nitte",
     university: "Nitte University",
     years: "2025 - Present",
-    grade: "CGPA: 9.30/10",
   },
 ];

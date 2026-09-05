@@ -24,7 +24,7 @@ export default function EducationTimeline() {
                   <p className="mt-1 text-sm font-semibold text-ink">{entry.institution}</p>
                   <p className="text-sm text-ink-soft">{entry.university}</p>
                   <p className="mt-2 text-sm font-medium text-blue-700">{entry.years}</p>
-                  <p className="text-sm font-semibold text-primary">{entry.grade}</p>
+                  {entry.grade && <p className="text-sm font-semibold text-primary">{entry.grade}</p>}
                 </div>
               </div>
             </div>

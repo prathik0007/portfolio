@@ -35,7 +35,7 @@ export const portfolio = {
     },
     experience: {
       label: "MCA",
-      value: "CGPA: 9.30",
+      value: "Master of Computer Applications",
     },
     location: {
       label: "Location",
