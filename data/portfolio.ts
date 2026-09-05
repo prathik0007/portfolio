@@ -11,13 +11,13 @@ export const portfolio = {
   name: "Prathik",
   shortName: "Prathik", // used in the About page "full name" field
   initials: "P", // shown in the header logo badge
-  role: "Full-Stack Developer & Tech Enthusiast", // the first word is automatically highlighted in blue on the homepage
+  role: "Full-Stack Developer", // the first word is automatically highlighted in blue on the homepage
   tagline: "Full-Stack Developer & Tech Enthusiast", // used as page subtitle in nav drawer / about
 
-  // Hero introduction
+  // Hero introduction (matches Image 2 style)
   greeting: "Hi, I'm",
   introduction:
-    "I am a passionate Full-Stack Developer & Tech Enthusiast dedicated to creating high-performance, scalable web and mobile solutions with modern technologies.",
+    "Full-Stack & App Developer passionate about building high-performance applications. DSA enthusiast, consistent LeetCode problem solver (450+ solved), and competitive programming winner turning complex logic into impactful products.",
 
   // Personal details
   email: "your.email@example.com",
@@ -50,7 +50,7 @@ export const portfolio = {
   // Files
   resumePdfPath: "/resume/resume.pdf",
   resumePreviewImagePath: "/resume/resume-preview.png",
-  profileImagePath: "/images/profile.jpg",
+  profileImagePath: "/images/prathik.jpg",
 
   // Footer
   footerTagline: "Crafting digital experiences with passion and precision",
