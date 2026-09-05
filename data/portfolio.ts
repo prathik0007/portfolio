@@ -78,9 +78,9 @@ export const socialLinks = [
 export const navItems = [
   { label: "Home", href: "/", icon: "home" },
   { label: "About", href: "/about", icon: "user" },
-  { label: "Skills", href: "/#skills", icon: "code" },
-  { label: "Certificates", href: "/#certificates", icon: "award" },
-  { label: "Handles", href: "/#handles", icon: "terminal" },
+  { label: "Skills", href: "/skills", icon: "code" },
+  { label: "Certificates", href: "/certificates", icon: "award" },
+  { label: "Handles", href: "/handles", icon: "terminal" },
   { label: "Projects", href: "/projects", icon: "rocket" },
   { label: "Resume", href: "/resume", icon: "file-text" },
   { label: "Contact", href: "/contact", icon: "mail" },
