@@ -8,7 +8,7 @@ export default function Hero() {
   const { infoCard } = portfolio;
 
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-20">
+    <section className="relative flex min-h-[calc(100vh-80px)] flex-col justify-center overflow-hidden bg-white py-12 lg:py-16">
       {/* Ambient background waves and fluid lighting */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* Soft fluid blue wave in bottom right */}
@@ -31,7 +31,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-12">
+      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-8 lg:px-12">
         {/* 3-Column Grid on Desktop: Text (5 cols), Avatar (4 cols), Info Card (3 cols) */}
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
           
