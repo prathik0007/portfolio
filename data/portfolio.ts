@@ -20,8 +20,8 @@ export const portfolio = {
     "Aspiring Application Developer with problem-solving skills and hands-on experience building web, Android, and backend applications. Passionate about creating real-world solutions and continuously growing as a developer.",
 
   // Personal details
-  email: "your.email@example.com",
-  phone: "+91 XXXXX XXXXX",
+  email: "prathikganiga202@gmail.com",
+  phone: "+91 9611914396",
   location: "Mangaluru, Karnataka, India",
   dateOfBirth: "October 20, 2003",
   age: "22 Years",
@@ -61,18 +61,20 @@ export const portfolio = {
   seo: {
     title: "Prathik | Portfolio",
     description:
-      "Portfolio of Prathik — Full-Stack Developer building modern, high-performance web and mobile applications.",
+      "Portfolio of Prathik — Aspiring Application Developer building modern web, Android, and backend applications.",
     siteUrl: "https://yourdomain.com",
     ogImage: "/images/profile.jpg",
   },
 };
 
 export const socialLinks = [
-  { name: "GitHub", href: "https://github.com/prathik", icon: "github" },
-  { name: "LinkedIn", href: "https://linkedin.com/in/prathik", icon: "linkedin" },
-  { name: "Email", href: "mailto:your.email@example.com", icon: "mail" },
-  { name: "Phone", href: "tel:+91XXXXXXXXXX", icon: "phone" },
-  { name: "LeetCode", href: "https://leetcode.com/u/prathik", icon: "code" },
+  { name: "GitHub", href: "https://github.com/prathik0007", icon: "github" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/prathik-b73793351", icon: "linkedin" },
+  { name: "WhatsApp", href: "https://wa.me/919611914396", icon: "whatsapp" },
+  { name: "Email", href: "mailto:prathikganiga202@gmail.com", icon: "mail" },
+  { name: "Instagram", href: "https://www.instagram.com/prathik._07/", icon: "instagram" },
+  { name: "LeetCode", href: "https://leetcode.com/u/Prathik07/", icon: "code" },
+  { name: "Phone", href: "tel:+919611914396", icon: "phone" },
 ] as const;
 
 export const navItems = [

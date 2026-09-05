@@ -1,220 +1,195 @@
 "use client";
 
-import { useState } from "react";
-import {
-  profileHandles,
-  handleCategories,
-  HandleCategory,
-  ProfileHandle,
-} from "@/data/handles";
-import SectionHeading from "@/components/SectionHeading";
-import {
-  ExternalLink,
-  Copy,
-  Check,
-  Award,
-  Sparkles,
-  TrendingUp,
-} from "lucide-react";
+import { connectHandles } from "@/data/handles";
 
-// Platform SVGs for authentic representation
-function PlatformIcon({ platform, className = "h-5 w-5" }: { platform: string; className?: string }) {
-  switch (platform.toLowerCase()) {
-    case "leetcode":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.794l3.874-4.148 5.406-5.79A1.377 1.377 0 0 0 13.483 0zm-2.88 7.283a1.391 1.391 0 0 0-1.385 1.392v7.652c0 .769.624 1.392 1.385 1.392.762 0 1.386-.623 1.386-1.392V8.675c0-.769-.624-1.392-1.386-1.392z" />
-        </svg>
-      );
-    case "github":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-        </svg>
-      );
-    case "hackerrank":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1.758 15.656h-1.637v-2.734H9.879v2.734H8.242V8.344h1.637v2.969h2.242V8.344h1.637v7.312z" />
-        </svg>
-      );
-    case "codeforces":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3A1.5 1.5 0 0 1 0 19.5V9a1.5 1.5 0 0 1 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5V12a1.5 1.5 0 0 1 1.5-1.5h3z" />
-        </svg>
-      );
-    case "codechef":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V14.5a1 1 0 0 0-2 0v2.43a6 6 0 1 1 4.24-10.24l-1.42 1.42A4 4 0 1 0 11 14.5v-2.43a6 6 0 0 1 2 4.86z" />
-        </svg>
-      );
-    case "geeksforgeeks":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-2h2v2zm0-4h-2V7h2v5.5z" />
-        </svg>
-      );
-    case "linkedin":
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-        </svg>
-      );
-    default:
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-      );
-  }
+function LaptopIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none">
+      {/* Screen lid */}
+      <rect x="13" y="12" width="38" height="26" rx="3" fill="#3B82F6" />
+      <rect x="16" y="15" width="32" height="20" rx="1.5" fill="#60A5FA" />
+      <rect x="19" y="18" width="12" height="3" rx="1.5" fill="#DBEAFE" />
+      <rect x="19" y="23" width="18" height="2" rx="1" fill="#BFDBFE" />
+      <rect x="19" y="27" width="14" height="2" rx="1" fill="#BFDBFE" />
+      {/* Base */}
+      <path
+        d="M6 40h52c1.657 0 3 1.343 3 3v2c0 1.105-.895 2-2 2H5c-1.105 0-2-.895-2-2v-2c0-1.657 1.343-3 3-3z"
+        fill="#93C5FD"
+      />
+      <path d="M26 40h12v2H26z" fill="#DBEAFE" />
+    </svg>
+  );
 }
 
-export default function HandlesSection({ id = "handles" }: { id?: string }) {
-  const [activeCategory, setActiveCategory] = useState<HandleCategory>("All");
-  const [copiedHandle, setCopiedHandle] = useState<string | null>(null);
-
-  const filteredHandles =
-    activeCategory === "All"
-      ? profileHandles
-      : profileHandles.filter((h) => h.category === activeCategory);
-
-  function copyHandleUsername(username: string) {
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(username);
-      setCopiedHandle(username);
-      setTimeout(() => setCopiedHandle(null), 2000);
-    }
-  }
-
+function BriefcaseIcon() {
   return (
-    <section id={id} className="relative scroll-mt-24 py-20 bg-white border-t border-surface-border">
-      {/* Background ambient elements */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-primary-light/40 blur-3xl" />
-        <div className="absolute right-10 bottom-10 h-80 w-80 rounded-full bg-emerald-50/50 blur-3xl" />
-      </div>
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none">
+      <path
+        d="M24 16v-4a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v4"
+        stroke="#78350F"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
+      <rect x="10" y="16" width="44" height="34" rx="5" fill="#92400E" />
+      <rect x="10" y="16" width="44" height="12" fill="#B45309" rx="5" />
+      <path d="M10 28h44" stroke="#78350F" strokeWidth="2" />
+      <rect x="18" y="16" width="4" height="34" fill="#78350F" opacity="0.4" />
+      <rect x="42" y="16" width="4" height="34" fill="#78350F" opacity="0.4" />
+      <rect x="28.5" y="25" width="7" height="6" rx="1.5" fill="#FCD34D" />
+    </svg>
+  );
+}
 
+function ChatBubbleIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none">
+      <path
+        d="M48 27c0 11.046-9.85 20-22 20-3.376 0-6.568-.69-9.378-1.916L7 48l3.197-8.791C8.75 35.688 8 31.472 8 27 8 15.954 17.85 7 30 7s22 8.954 22 20z"
+        fill="#DDD6FE"
+      />
+      <path
+        d="M46 25c0 10.493-9.402 19-21 19-3.21 0-6.242-.653-8.913-1.815L8 45l3.038-8.354C9.728 33.275 9 29.266 9 25c0-10.493 9.402-19 21-19s21 8.507 21 19z"
+        fill="#EDE9FE"
+      />
+      <circle cx="21" cy="25" r="2.5" fill="#8B5CF6" />
+      <circle cx="29" cy="25" r="2.5" fill="#8B5CF6" />
+      <circle cx="37" cy="25" r="2.5" fill="#8B5CF6" />
+    </svg>
+  );
+}
+
+function MailEnvelopeIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none">
+      <rect x="8" y="16" width="48" height="32" rx="4" fill="#E2E8F0" />
+      <path d="M8 20l24 16 24-16" fill="#CBD5E1" />
+      <path d="M8 20l24 16 24-16v24a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V20z" fill="#F8FAFC" />
+      <path d="M8 44l17-13M56 44L39 31" stroke="#94A3B8" strokeWidth="1.5" />
+      <circle cx="32" cy="30" r="7" fill="#3B82F6" />
+      <text
+        x="32"
+        y="34"
+        textAnchor="middle"
+        fill="white"
+        fontSize="11"
+        fontWeight="bold"
+        fontFamily="sans-serif"
+      >
+        @
+      </text>
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none">
+      <defs>
+        <linearGradient id="ig-fluent-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#F59E0B" />
+          <stop offset="35%" stopColor="#EF4444" />
+          <stop offset="70%" stopColor="#EC4899" />
+          <stop offset="100%" stopColor="#8B5CF6" />
+        </linearGradient>
+      </defs>
+      <rect x="10" y="10" width="44" height="44" rx="14" fill="url(#ig-fluent-grad)" />
+      <rect x="14" y="14" width="36" height="36" rx="10" fill="none" stroke="white" strokeWidth="3" />
+      <circle cx="32" cy="32" r="8.5" stroke="white" strokeWidth="3" fill="none" />
+      <circle cx="42" cy="22" r="2.2" fill="white" />
+    </svg>
+  );
+}
+
+function LeetCodeIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none">
+      <rect x="10" y="10" width="44" height="44" rx="14" fill="#FFFBEB" stroke="#FDE68A" strokeWidth="2" />
+      <path
+        d="M26 23l-9 9 9 9"
+        stroke="#D97706"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M38 23l9 9-9 9"
+        stroke="#D97706"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M34 19l-4 26"
+        stroke="#F59E0B"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+const iconComponentMap = {
+  github: LaptopIcon,
+  linkedin: BriefcaseIcon,
+  whatsapp: ChatBubbleIcon,
+  email: MailEnvelopeIcon,
+  instagram: InstagramIcon,
+  leetcode: LeetCodeIcon,
+};
+
+export default function HandlesSection({ id = "handles" }: { id?: string }) {
+  return (
+    <section
+      id={id}
+      className="relative scroll-mt-24 bg-white py-20 border-t border-surface-border"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Coding &"
-          highlight="Profiles"
-          subtitle="Explore my coding activity, problem-solving journey, competitive rankings, and social connections."
-        />
-
-        {/* Category Tabs */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          {handleCategories.map((category) => {
-            const isActive = activeCategory === category;
-            return (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-                className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 ${
-                  isActive
-                    ? "bg-primary text-white shadow-card hover:bg-primary-dark"
-                    : "border border-surface-border bg-white text-ink-soft hover:border-primary/40 hover:text-primary"
-                }`}
-              >
-                {category}
-              </button>
-            );
-          })}
+        {/* Section Heading matching screenshot */}
+        <div className="text-center">
+          <h2 className="font-sans text-3xl font-extrabold text-ink sm:text-4xl tracking-tight">
+            Connect With Me
+          </h2>
+          <p className="mt-2.5 text-sm font-medium text-ink-soft sm:text-base">
+            Let&apos;s stay connected on social platforms
+          </p>
         </div>
 
-        {/* Handles Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredHandles.map((handle) => (
-            <article
-              key={handle.id}
-              className="group relative flex flex-col justify-between rounded-2xl border border-surface-border bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-              style={{
-                borderColor: undefined,
-              }}
-            >
-              <div>
-                {/* Header: Icon + Platform & Username */}
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-card transition-transform group-hover:scale-105"
-                      style={{ backgroundColor: handle.brandColor }}
-                    >
-                      <PlatformIcon platform={handle.icon} className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-lg font-bold text-ink">
-                        {handle.platform}
-                      </h3>
-                      <p className="text-xs font-medium text-ink-soft">
-                        @{handle.username.replace(/^@/, "")}
-                      </p>
-                    </div>
-                  </div>
+        {/* Handles Cards Grid matching screenshot */}
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+          {connectHandles.map((item) => {
+            const IconComponent =
+              iconComponentMap[item.icon as keyof typeof iconComponentMap] ||
+              LaptopIcon;
 
-                  {handle.badgeText && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-primary-light px-2.5 py-1 text-[11px] font-semibold text-primary">
-                      <Sparkles size={11} /> {handle.badgeText}
-                    </span>
-                  )}
+            return (
+              <a
+                key={item.id}
+                href={item.url}
+                target={item.url.startsWith("mailto") ? undefined : "_blank"}
+                rel={
+                  item.url.startsWith("mailto")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
+                className="group flex flex-col items-center justify-center rounded-2xl border border-surface-border/70 bg-white p-6 sm:p-7 text-center shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-card-hover"
+              >
+                {/* 3D / Authentic Icon */}
+                <div className="flex h-16 w-16 items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  <IconComponent />
                 </div>
 
-                {/* Description */}
-                <p className="mt-4 text-xs leading-relaxed text-ink-soft">
-                  {handle.description}
+                {/* Platform Name */}
+                <h3 className="mt-4 font-sans text-base font-bold text-ink transition-colors group-hover:text-primary">
+                  {item.platform}
+                </h3>
+
+                {/* Subtitle */}
+                <p className="mt-1 text-xs text-ink-soft group-hover:text-ink transition-colors">
+                  {item.subtitle}
                 </p>
-
-                {/* Stats Grid */}
-                {handle.stats && handle.stats.length > 0 && (
-                  <div className="mt-5 grid grid-cols-3 gap-2 rounded-xl bg-surface-muted p-3 border border-surface-border/70">
-                    {handle.stats.map((stat) => (
-                      <div key={stat.label} className="text-center">
-                        <p className="font-serif text-sm font-bold text-ink sm:text-base">
-                          {stat.value}
-                        </p>
-                        <p className="mt-0.5 text-[10px] font-medium text-ink-soft line-clamp-1">
-                          {stat.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Action Buttons: Copy Handle + Visit Profile */}
-              <div className="mt-6 flex items-center gap-2 border-t border-surface-border pt-4">
-                <button
-                  type="button"
-                  onClick={() => copyHandleUsername(handle.username)}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl border border-surface-border bg-white px-3 py-2 text-xs font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
-                >
-                  {copiedHandle === handle.username ? (
-                    <>
-                      <Check size={13} className="text-emerald-600" />
-                      <span className="text-emerald-600">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy size={13} />
-                      <span>Copy Handle</span>
-                    </>
-                  )}
-                </button>
-
-                <a
-                  href={handle.profileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-primary px-3 py-2 text-xs font-semibold text-white shadow-card transition-all hover:bg-primary-dark hover:shadow-card-hover"
-                >
-                  <ExternalLink size={13} /> Visit Profile
-                </a>
-              </div>
-            </article>
-          ))}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
