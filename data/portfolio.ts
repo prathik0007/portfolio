@@ -22,10 +22,10 @@ export const portfolio = {
   // Personal details
   email: "prathikganiga202@gmail.com",
   phone: "+91 9611914396",
-  location: "Mangaluru, Karnataka, India",
-  dateOfBirth: "October 20, 2003",
-  age: "22 Years",
-  fullAddress: "Mangaluru, Karnataka, India",
+  location: "Belthangady 574214, Mangalore, Karnataka, India",
+  dateOfBirth: "April 22, 2005",
+  age: "21 Years",
+  fullAddress: "Belthangady 574214, Mangalore, Karnataka, India",
 
   // Homepage info card (matches Screenshot 2)
   infoCard: {
@@ -39,7 +39,7 @@ export const portfolio = {
     },
     location: {
       label: "Location",
-      value: "Mangaluru, Karnataka, India",
+      value: "Belthangady 574214, Mangalore, Karnataka, India",
     },
     availability: {
       label: "Open to Work",
