@@ -19,13 +19,14 @@ export default function AboutPage() {
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="animate-fade-in text-center">
-        <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-4 border-primary shadow-card-hover">
+        <div className="mx-auto h-36 w-36 overflow-hidden rounded-full border-4 border-primary shadow-card-hover transition-transform hover:scale-105">
           <Image
             src={portfolio.profileImagePath}
             alt={`Portrait of ${portfolio.name}`}
-            width={112}
-            height={112}
-            className="h-full w-full object-cover object-[center_20%]"
+            width={144}
+            height={144}
+            className="h-full w-full object-cover object-[center_15%]"
+            priority
           />
         </div>
         <h1 className="mt-6 font-serif text-4xl font-bold text-ink">About Me</h1>
