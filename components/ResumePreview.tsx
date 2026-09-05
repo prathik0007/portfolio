@@ -6,14 +6,15 @@ export default function ResumePreview() {
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.4fr_1fr]">
       {/* Resume document preview */}
-      <div className="rounded-2xl border border-surface-border bg-surface-muted p-4 shadow-card sm:p-8">
-        <div className="relative mx-auto aspect-[1/1.35] w-full max-w-2xl overflow-hidden rounded-lg border border-surface-border bg-white shadow-card-hover">
+      <div className="rounded-2xl border border-surface-border bg-surface-muted p-4 shadow-card sm:p-6 flex justify-center items-start">
+        <div className="relative w-full max-w-2xl overflow-hidden rounded-lg border border-surface-border bg-white shadow-card-hover">
           <Image
             src={portfolio.resumePreviewImagePath}
             alt={`Resume preview for ${portfolio.name}`}
-            fill
-            sizes="(max-width: 1024px) 100vw, 60vw"
-            className="object-cover object-top"
+            width={1700}
+            height={2200}
+            className="w-full h-auto object-contain block"
+            priority
           />
         </div>
       </div>
