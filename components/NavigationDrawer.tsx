@@ -65,7 +65,7 @@ export default function NavigationDrawer({
         }`}
       >
         <div className="flex h-full flex-col">
-          {/* Red header area */}
+          {/* Blue header area */}
           <div className="relative bg-primary px-7 pb-7 pt-8">
             <button
               ref={closeButtonRef}

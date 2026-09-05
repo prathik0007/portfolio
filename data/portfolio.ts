@@ -11,7 +11,7 @@ export const portfolio = {
   name: "Your Name",
   shortName: "Your Name", // used in the About page "full name" field
   initials: "Y", // shown in the header logo badge
-  role: "Your Role", // the first word is automatically highlighted in red on the homepage
+  role: "Your Role", // the first word is automatically highlighted in blue on the homepage
   tagline: "Full-Stack Developer & Tech Enthusiast", // used as page subtitle in nav drawer / about
 
   // Hero introduction

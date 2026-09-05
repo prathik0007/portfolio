@@ -80,7 +80,7 @@ export default function CertificatesSection({ id = "certificates" }: { id?: stri
               className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-surface-border bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card-hover"
             >
               {/* Top Accent Gradient Line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-rose-500 to-amber-500" />
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-blue-400 to-cyan-400" />
 
               <div>
                 {/* Header: Issuer + Date */}

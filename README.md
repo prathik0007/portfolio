@@ -43,7 +43,7 @@ You generally never need to edit files inside `components/` or `app/` just to up
 
 ### 1. Update your personal information
 
-Open `data/portfolio.ts` and replace every placeholder value (name, role, email, phone, location, bio, etc.). The `roleHighlight` field controls which word/phrase in your role is styled in red on the homepage — make sure it's an exact substring of `role`.
+Open `data/portfolio.ts` and replace every placeholder value (name, role, email, phone, location, bio, etc.). The `roleHighlight` field controls which word/phrase in your role is styled in blue on the homepage — make sure it's an exact substring of `role`.
 
 ### 2. Replace your profile photo
 
@@ -103,7 +103,7 @@ The same applies to the newsletter form in `components/Footer.tsx`.
 
 ## Design system
 
-- Primary red: `#E31E24`
+- Primary blue: `#2563EB`
 - Ink (headings/body): deep navy `#1A2233`
 - Backgrounds: white / very light gray
 - Fonts: a serif display face for headings, a sans-serif for body text (both loaded via `next/font/google` in `app/layout.tsx`)

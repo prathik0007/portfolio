@@ -12,9 +12,9 @@ import { Code2, Sparkles, CheckCircle2, Terminal, Cpu } from "lucide-react";
 
 const proficiencyColorMap: Record<SkillProficiency, { badge: string; dot: string; bar: string }> = {
   Expert: {
-    badge: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    dot: "bg-emerald-500",
-    bar: "bg-emerald-500",
+    badge: "bg-indigo-50 text-indigo-700 border-indigo-200",
+    dot: "bg-indigo-600",
+    bar: "bg-indigo-600",
   },
   Advanced: {
     badge: "bg-primary-light text-primary border-primary/20",
@@ -22,9 +22,9 @@ const proficiencyColorMap: Record<SkillProficiency, { badge: string; dot: string
     bar: "bg-primary",
   },
   Proficient: {
-    badge: "bg-blue-50 text-blue-700 border-blue-200",
-    dot: "bg-blue-600",
-    bar: "bg-blue-600",
+    badge: "bg-sky-50 text-sky-700 border-sky-200",
+    dot: "bg-sky-600",
+    bar: "bg-sky-600",
   },
   Familiar: {
     badge: "bg-slate-100 text-slate-700 border-slate-200",
