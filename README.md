@@ -33,9 +33,11 @@ Everything you'll want to personalize lives in `data/`:
 | File | Controls |
 |---|---|
 | `data/portfolio.ts` | Name, role, bio, contact details, hero copy, homepage info card, social links, nav labels, SEO metadata, resume/profile image paths |
+| `data/skills.ts` | Technical skill categories, proficiency levels, percentages, interests, and opportunities |
+| `data/certificates.ts` | Certifications, issuers, issue dates, credential IDs, verification links, and skill tags |
+| `data/handles.ts` | Coding platform profiles (LeetCode, GitHub, HackerRank, CodeChef, Codeforces, etc.) with stats & handles |
 | `data/projects.ts` | The full project list shown on `/projects` — add, remove, or edit entries freely |
 | `data/education.ts` | Education timeline entries on `/about` |
-| `data/skills.ts` | Technical skills (with percentages), interests, and "Open for Opportunities" cards |
 
 You generally never need to edit files inside `components/` or `app/` just to update your info — edit the data files instead.
 

@@ -3,12 +3,15 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, Home, User, Rocket, FileText, Mail } from "lucide-react";
+import { X, Home, User, Rocket, FileText, Mail, Code2, Award, Terminal } from "lucide-react";
 import { navItems, portfolio } from "@/data/portfolio";
 
 const iconMap = {
   home: Home,
   user: User,
+  code: Code2,
+  award: Award,
+  terminal: Terminal,
   rocket: Rocket,
   "file-text": FileText,
   mail: Mail,
