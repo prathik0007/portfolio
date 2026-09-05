@@ -52,7 +52,7 @@ export default function RootLayout({
     <html lang="en" className={`${sourceSerif.variable} ${inter.variable}`}>
       <body className="font-sans flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1 pt-[72px]">{children}</main>
+        <main className="flex-1 pt-[80px]">{children}</main>
         <Footer />
         <ScrollToTop />
       </body>
