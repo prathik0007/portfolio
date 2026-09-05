@@ -8,24 +8,24 @@
 
 export const portfolio = {
   // Basic identity
-  name: "Your Name",
-  shortName: "Your Name", // used in the About page "full name" field
-  initials: "Y", // shown in the header logo badge
-  role: "Your Role", // the first word is automatically highlighted in blue on the homepage
+  name: "SHASHIDHARA K",
+  shortName: "SHASHIDHARA K", // used in the About page "full name" field
+  initials: "S", // shown in the header logo badge
+  role: "Full-Stack Developer & Tech Enthusiast", // the first word is automatically highlighted in blue on the homepage
   tagline: "Full-Stack Developer & Tech Enthusiast", // used as page subtitle in nav drawer / about
 
   // Hero introduction
   greeting: "Hi, I'm",
   introduction:
-    "Your professional introduction goes here. Replace this text with your own description of what you do, what you're passionate about, and what makes you stand out.",
+    "I am a passionate Full-Stack Developer & Tech Enthusiast dedicated to creating high-performance, scalable web and mobile solutions with modern technologies.",
 
   // Personal details
   email: "your.email@example.com",
   phone: "+91 XXXXX XXXXX",
-  location: "Your City, State, India",
-  dateOfBirth: "Your Date of Birth",
-  age: "XX Years",
-  fullAddress: "Your Address, City, State, India",
+  location: "Belthangady 574214, Mangalore, Karnataka, India",
+  dateOfBirth: "October 20, 2003",
+  age: "22 Years",
+  fullAddress: "Belthangady 574214, Mangalore, Karnataka, India",
 
   // Homepage info card (top education + experience + location + availability)
   infoCard: {
@@ -54,13 +54,13 @@ export const portfolio = {
 
   // Footer
   footerTagline: "Crafting digital experiences with passion and precision",
-  copyrightName: "Your Name",
+  copyrightName: "SHASHIDHARA K",
 
   // SEO / metadata — edit these for search engines and link previews
   seo: {
-    title: "Your Name | Portfolio",
+    title: "SHASHIDHARA K | Portfolio",
     description:
-      "Portfolio of Your Name — Full-Stack Developer building modern, high-performance web and mobile applications.",
+      "Portfolio of SHASHIDHARA K — Full-Stack Developer building modern, high-performance web and mobile applications.",
     siteUrl: "https://yourdomain.com",
     ogImage: "/images/profile.jpg",
   },

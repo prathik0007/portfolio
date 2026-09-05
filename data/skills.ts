@@ -9,14 +9,11 @@ export type Skill = {
   percentage: number; // 0 - 100
 };
 
-// Original overview skills
+// Original overview skills (matches Screenshot 3)
 export const skills: Skill[] = [
-  { id: "frontend", name: "Frontend Development", percentage: 90 },
-  { id: "backend", name: "Backend Development", percentage: 85 },
+  { id: "frontend", name: "Frontend Development", percentage: 85 },
+  { id: "backend", name: "Backend Development", percentage: 80 },
   { id: "mobile", name: "Mobile App Development", percentage: 75 },
-  { id: "database", name: "Database Design & SQL", percentage: 80 },
-  { id: "devops", name: "DevOps & Cloud Tools", percentage: 70 },
-  { id: "problem-solving", name: "Data Structures & Algorithms", percentage: 85 },
 ];
 
 export type SkillProficiency = "Expert" | "Advanced" | "Proficient" | "Familiar";
@@ -84,12 +81,10 @@ export type SkillCategory = (typeof skillCategories)[number];
 
 export const interests: string[] = [
   "Web Development",
-  "Full-Stack Architecture",
+  "Mobile Applications",
   "Open Source",
-  "Competitive Programming",
-  "System Design",
-  "Cloud & DevOps",
-  "UI/UX Design",
+  "Tech Innovation",
+  "Problem Solving",
   "Continuous Learning",
 ];
 
@@ -103,20 +98,20 @@ export type Opportunity = {
 export const opportunities: Opportunity[] = [
   {
     id: "opp-frontend",
-    title: "Frontend Engineering",
-    description: "Seeking roles focused on React, Next.js, TypeScript, and modern, performant web applications.",
-    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    title: "Frontend Development",
+    description: "Seeking internship opportunities in React, Next.js, and modern frontend technologies",
+    tags: ["React", "Next.js", "Javascript"],
   },
   {
     id: "opp-backend",
-    title: "Backend & API Engineering",
-    description: "Looking for roles in Node.js, Express, databases, and microservices architecture.",
-    tags: ["Node.js", "PostgreSQL", "Express", "REST APIs"],
+    title: "Backend Development",
+    description: "Looking for internship roles in Node.js, databases, and server-side development",
+    tags: ["Node.js", "MongoDB", "Express"],
   },
   {
-    id: "opp-fullstack",
-    title: "Full-Stack Development",
-    description: "Open to full-stack opportunities delivering complete end-to-end features from UI to database.",
-    tags: ["Full-Stack", "MERN", "Next.js", "Cloud"],
+    id: "opp-mobile",
+    title: "Mobile App Development",
+    description: "Interested in React Native and cross-platform mobile development internships",
+    tags: ["React Native", "Flutter", "Mobile UI"],
   },
 ];

@@ -1,7 +1,6 @@
 // ============================================================================
 // EDUCATION DATA
-// Powers the timeline on the About page. Add or remove entries freely —
-// the timeline layout adapts automatically.
+// Powers the timeline on the About page.
 // ============================================================================
 
 export type EducationEntry = {
@@ -16,18 +15,18 @@ export type EducationEntry = {
 export const education: EducationEntry[] = [
   {
     id: "edu-1",
-    degree: "Your Degree",
-    institution: "Your Institution",
-    university: "Your University",
-    years: "20XX - 20XX",
-    grade: "CGPA: X.XX/10",
+    degree: "Bachelor of Computer Applications",
+    institution: "Sacred Heart College, Madanthyar",
+    university: "Mangalore University",
+    years: "2022 - 2025",
+    grade: "CGPA: 8.67/10",
   },
   {
     id: "edu-2",
-    degree: "Your Degree",
-    institution: "Your Institution",
-    university: "Your University",
-    years: "20XX - Present",
-    grade: "CGPA: X.XX/10",
+    degree: "Master of Computer Applications",
+    institution: "N.M.A.M Institute of Technology, Nitte",
+    university: "Nitte University",
+    years: "2025 - Present",
+    grade: "CGPA: 9.30/10",
   },
 ];

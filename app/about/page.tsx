@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { portfolio } from "@/data/portfolio";
 import SectionHeading from "@/components/SectionHeading";
 import PersonalInfo from "@/components/PersonalInfo";
@@ -69,6 +70,24 @@ export default function AboutPage() {
         <SectionHeading title="Open for" highlight="Opportunities" />
         <div className="mt-10">
           <Opportunities />
+        </div>
+      </section>
+
+      {/* Let's Connect CTA */}
+      <section className="mt-20">
+        <div className="rounded-2xl border border-surface-border bg-white p-10 text-center shadow-card">
+          <h2 className="font-serif text-3xl font-bold text-ink sm:text-4xl">Let&apos;s Connect!</h2>
+          <p className="mx-auto mt-3 max-w-xl text-base text-ink-soft">
+            I&apos;m always excited to discuss new opportunities and collaborate on interesting projects.
+          </p>
+          <div className="mt-6">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-white shadow-card transition-all hover:bg-primary-dark hover:shadow-card-hover"
+            >
+              Get In Touch
+            </Link>
+          </div>
         </div>
       </section>
     </div>
