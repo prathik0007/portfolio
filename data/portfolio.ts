@@ -8,9 +8,9 @@
 
 export const portfolio = {
   // Basic identity
-  name: "SHASHIDHARA K",
-  shortName: "SHASHIDHARA K", // used in the About page "full name" field
-  initials: "S", // shown in the header logo badge
+  name: "Prathik",
+  shortName: "Prathik", // used in the About page "full name" field
+  initials: "P", // shown in the header logo badge
   role: "Full-Stack Developer & Tech Enthusiast", // the first word is automatically highlighted in blue on the homepage
   tagline: "Full-Stack Developer & Tech Enthusiast", // used as page subtitle in nav drawer / about
 
@@ -22,28 +22,28 @@ export const portfolio = {
   // Personal details
   email: "your.email@example.com",
   phone: "+91 XXXXX XXXXX",
-  location: "Belthangady 574214, Mangalore, Karnataka, India",
+  location: "Mangaluru, Karnataka, India",
   dateOfBirth: "October 20, 2003",
   age: "22 Years",
-  fullAddress: "Belthangady 574214, Mangalore, Karnataka, India",
+  fullAddress: "Mangaluru, Karnataka, India",
 
-  // Homepage info card (top education + experience + location + availability)
+  // Homepage info card (matches Screenshot 2)
   infoCard: {
     education: {
-      label: "Education",
-      value: "Degree / Institution",
+      label: "NMAM",
+      value: "Institute of Technology, Nitte",
     },
     experience: {
-      label: "Experience",
-      value: "Your experience",
+      label: "MCA",
+      value: "CGPA: 9.30",
     },
     location: {
       label: "Location",
-      value: "Your location",
+      value: "Mangaluru, Karnataka, India",
     },
     availability: {
       label: "Open to Work",
-      value: "Internship / Full-time",
+      value: "Internship & Full-time",
     },
   },
 
@@ -54,23 +54,24 @@ export const portfolio = {
 
   // Footer
   footerTagline: "Crafting digital experiences with passion and precision",
-  copyrightName: "SHASHIDHARA K",
+  copyrightName: "Prathik",
 
   // SEO / metadata — edit these for search engines and link previews
   seo: {
-    title: "SHASHIDHARA K | Portfolio",
+    title: "Prathik | Portfolio",
     description:
-      "Portfolio of SHASHIDHARA K — Full-Stack Developer building modern, high-performance web and mobile applications.",
+      "Portfolio of Prathik — Full-Stack Developer building modern, high-performance web and mobile applications.",
     siteUrl: "https://yourdomain.com",
     ogImage: "/images/profile.jpg",
   },
 };
 
 export const socialLinks = [
-  { name: "GitHub", href: "https://github.com/yourusername", icon: "github" },
-  { name: "LinkedIn", href: "https://linkedin.com/in/yourusername", icon: "linkedin" },
+  { name: "GitHub", href: "https://github.com/prathik", icon: "github" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/prathik", icon: "linkedin" },
   { name: "Email", href: "mailto:your.email@example.com", icon: "mail" },
   { name: "Phone", href: "tel:+91XXXXXXXXXX", icon: "phone" },
+  { name: "LeetCode", href: "https://leetcode.com/u/prathik", icon: "code" },
 ] as const;
 
 export const navItems = [

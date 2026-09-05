@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Code2 } from "lucide-react";
 import { socialLinks } from "@/data/portfolio";
 
 const iconMap = {
@@ -6,6 +6,7 @@ const iconMap = {
   linkedin: Linkedin,
   mail: Mail,
   phone: Phone,
+  code: Code2,
 };
 
 export default function SocialLinks({

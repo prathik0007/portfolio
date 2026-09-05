@@ -25,8 +25,17 @@ export default function Hero() {
           </span>
 
           <h1 className="mt-5 font-serif text-4xl font-extrabold leading-tight text-ink sm:text-5xl lg:text-6xl">
-            {portfolio.name.split(" ").slice(0, -1).join(" ")}{" "}
-            <span className="text-primary">{portfolio.name.split(" ").slice(-1)}</span>
+            {portfolio.name.includes(" ") ? (
+              <>
+                {portfolio.name.split(" ").slice(0, -1).join(" ")}{" "}
+                <span className="text-primary">{portfolio.name.split(" ").slice(-1)}</span>
+              </>
+            ) : (
+              <>
+                {portfolio.name}
+                <span className="text-primary">.</span>
+              </>
+            )}
           </h1>
 
           <p className="mt-1 font-serif text-2xl font-bold text-ink sm:text-3xl">
@@ -66,10 +75,22 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: profile image + info card */}
+        {/* Right: profile image with concentric orbit rings + floating info card */}
         <div className="relative flex justify-center lg:justify-end">
           <div className="relative">
-            <div className="absolute inset-0 -z-10 dot-grid opacity-70" style={{ maskImage: "radial-gradient(circle, black 40%, transparent 75%)" }} />
+            {/* Ambient background glow */}
+            <div className="absolute -inset-10 -z-10 rounded-full bg-gradient-to-tr from-primary-light/70 via-blue-50/40 to-transparent blur-2xl" />
+
+            {/* Concentric decorative orbit rings matching screenshot */}
+            <div className="absolute -inset-6 rounded-full border border-primary/30 border-dashed pointer-events-none" />
+            <div className="absolute -inset-12 rounded-full border border-primary/15 pointer-events-none" />
+
+            {/* Floating accent dots (blue) */}
+            <div className="absolute -top-3 right-10 h-3.5 w-3.5 rounded-full bg-primary shadow-sm" />
+            <div className="absolute -bottom-4 left-6 h-3.5 w-3.5 rounded-full border-2 border-primary" />
+            <div className="absolute top-1/3 -left-5 h-2 w-2 rounded-full bg-primary/60" />
+
+            {/* Avatar container */}
             <div className="relative h-64 w-64 overflow-hidden rounded-full border-[6px] border-white bg-surface-muted shadow-card-hover sm:h-80 sm:w-80">
               <Image
                 src={portfolio.profileImagePath}
@@ -80,46 +101,51 @@ export default function Hero() {
                 priority
               />
             </div>
-            <CircleDot className="absolute -top-2 right-6 text-primary" size={20} />
-            <span className="absolute -bottom-3 left-2 h-3 w-3 rounded-full border-2 border-primary/60" />
 
-            {/* Info card */}
-            <div className="absolute -right-6 bottom-4 hidden w-64 rounded-2xl border border-surface-border bg-white p-5 shadow-card-hover sm:block lg:-right-16">
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-primary-light text-primary">
-                    <GraduationCap size={16} />
+            {/* Floating Info card matching screenshot 2 */}
+            <div className="absolute -right-4 sm:-right-12 top-1/2 -translate-y-1/2 hidden w-64 sm:w-72 rounded-2xl border border-surface-border bg-white/95 backdrop-blur-sm p-4 sm:p-5 shadow-card-hover md:block">
+              <ul className="flex flex-col gap-3.5">
+                {/* 1: Institution */}
+                <li className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-primary-light text-primary">
+                    <GraduationCap size={18} />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-ink">{infoCard.education.label}</p>
-                    <p className="text-xs text-ink-soft">{infoCard.education.value}</p>
+                    <p className="font-serif text-sm font-bold text-ink leading-tight">{infoCard.education.label}</p>
+                    <p className="text-xs text-ink-soft leading-tight mt-0.5">{infoCard.education.value}</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-3 border-t border-surface-border pt-4">
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-primary-light text-primary">
-                    <Award size={16} />
+
+                {/* 2: Degree / MCA */}
+                <li className="flex items-center gap-3 border-t border-surface-border/80 pt-3.5">
+                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-primary-light text-primary">
+                    <Award size={18} />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-ink">{infoCard.experience.label}</p>
-                    <p className="text-xs text-ink-soft">{infoCard.experience.value}</p>
+                    <p className="font-serif text-sm font-bold text-ink leading-tight">{infoCard.experience.label}</p>
+                    <p className="text-xs text-ink-soft leading-tight mt-0.5">{infoCard.experience.value}</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-3 border-t border-surface-border pt-4">
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-primary-light text-primary">
-                    <MapPin size={16} />
+
+                {/* 3: Location */}
+                <li className="flex items-center gap-3 border-t border-surface-border/80 pt-3.5">
+                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-primary-light text-primary">
+                    <MapPin size={18} />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-ink">{infoCard.location.label}</p>
-                    <p className="text-xs text-ink-soft">{infoCard.location.value}</p>
+                    <p className="font-serif text-sm font-bold text-ink leading-tight">{infoCard.location.label}</p>
+                    <p className="text-xs text-ink-soft leading-tight mt-0.5">{infoCard.location.value}</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-3 border-t border-surface-border pt-4">
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-green-100 text-green-600">
-                    <CircleDot size={16} />
+
+                {/* 4: Open to Work */}
+                <li className="flex items-center gap-3 border-t border-surface-border/80 pt-3.5">
+                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                    <CircleDot size={18} />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-ink">{infoCard.availability.label}</p>
-                    <p className="text-xs text-ink-soft">{infoCard.availability.value}</p>
+                    <p className="font-serif text-sm font-bold text-ink leading-tight">{infoCard.availability.label}</p>
+                    <p className="text-xs text-ink-soft leading-tight mt-0.5">{infoCard.availability.value}</p>
                   </div>
                 </li>
               </ul>

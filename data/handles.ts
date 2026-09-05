@@ -35,8 +35,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "leetcode",
     platform: "LeetCode",
-    username: "your_leetcode",
-    profileUrl: "https://leetcode.com/u/your_leetcode",
+    username: "prathik_code",
+    profileUrl: "https://leetcode.com/u/prathik_code",
     category: "Coding & Problem Solving",
     badgeText: "Knight / Top 8%",
     stats: [
@@ -52,8 +52,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "github",
     platform: "GitHub",
-    username: "your_github",
-    profileUrl: "https://github.com/your_github",
+    username: "prathik",
+    profileUrl: "https://github.com/prathik",
     category: "Developer & Open Source",
     badgeText: "Arctic Code Vault",
     stats: [
@@ -69,8 +69,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "hackerrank",
     platform: "HackerRank",
-    username: "your_hackerrank",
-    profileUrl: "https://www.hackerrank.com/your_hackerrank",
+    username: "prathik_dev",
+    profileUrl: "https://www.hackerrank.com/prathik_dev",
     category: "Coding & Problem Solving",
     badgeText: "6★ Problem Solving",
     stats: [
@@ -86,8 +86,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "codeforces",
     platform: "Codeforces",
-    username: "your_codeforces",
-    profileUrl: "https://codeforces.com/profile/your_codeforces",
+    username: "prathik_cf",
+    profileUrl: "https://codeforces.com/profile/prathik_cf",
     category: "Coding & Problem Solving",
     badgeText: "Pupil / Specialist",
     stats: [
@@ -103,8 +103,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "codechef",
     platform: "CodeChef",
-    username: "your_codechef",
-    profileUrl: "https://www.codechef.com/users/your_codechef",
+    username: "prathik_chef",
+    profileUrl: "https://www.codechef.com/users/prathik_chef",
     category: "Coding & Problem Solving",
     badgeText: "3★ Coder",
     stats: [
@@ -120,8 +120,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "geeksforgeeks",
     platform: "GeeksforGeeks",
-    username: "your_gfg",
-    profileUrl: "https://auth.geeksforgeeks.org/user/your_gfg",
+    username: "prathik_gfg",
+    profileUrl: "https://auth.geeksforgeeks.org/user/prathik_gfg",
     category: "Coding & Problem Solving",
     badgeText: "Top Contributor",
     stats: [
@@ -137,8 +137,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "linkedin",
     platform: "LinkedIn",
-    username: "your_linkedin",
-    profileUrl: "https://linkedin.com/in/your_linkedin",
+    username: "prathik",
+    profileUrl: "https://linkedin.com/in/prathik",
     category: "Professional & Social",
     badgeText: "500+ Connections",
     stats: [
@@ -154,8 +154,8 @@ export const profileHandles: ProfileHandle[] = [
   {
     id: "twitter",
     platform: "X / Twitter",
-    username: "@your_handle",
-    profileUrl: "https://x.com/your_handle",
+    username: "@prathik_dev",
+    profileUrl: "https://x.com/prathik_dev",
     category: "Professional & Social",
     badgeText: "Tech Community",
     stats: [

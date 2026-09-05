@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-40 h-[72px] bg-white border-b border-surface-border">
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex h-full w-full items-center justify-between px-4 sm:px-8 lg:px-12">
           {/* Logo / brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white font-serif text-lg font-bold shadow-card transition-transform group-hover:scale-105">
