@@ -23,14 +23,14 @@ export default function ResumePreview() {
       <div className="flex flex-col gap-4">
         <a
           href={portfolio.resumePdfPath}
-          download
+          download={portfolio.resumeFileName}
           className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-primary-dark"
         >
           <Download size={16} /> Download PDF Resume
         </a>
         <a
           href={portfolio.resumePreviewImagePath}
-          download
+          download="Prathik-Resume-Preview.png"
           className="inline-flex items-center justify-center gap-2 rounded-xl border border-surface-border bg-white px-5 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
         >
           <ImageDown size={16} /> Download PNG Image
@@ -45,31 +45,38 @@ export default function ResumePreview() {
         </a>
 
         {/* Document details */}
-        <div className="mt-2 rounded-xl border border-surface-border bg-white p-5 shadow-card">
-          <p className="flex items-center gap-2 text-sm font-semibold text-ink">
-            <CheckCircle2 size={15} className="text-primary" /> Document Details
-          </p>
-          <dl className="mt-4 flex flex-col gap-3 text-sm">
+        <div className="mt-2 rounded-2xl border border-surface-border bg-white p-6 shadow-sm">
+          <div className="flex items-center gap-2.5 border-b border-gray-100 pb-3.5">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white text-[11px] font-serif font-bold italic">
+              i
+            </span>
+            <h3 className="font-serif text-base font-bold text-ink">
+              Document Details
+            </h3>
+          </div>
+
+          <dl className="mt-4 flex flex-col gap-3.5 text-[15px]">
             <div className="flex items-center justify-between">
-              <dt className="text-ink-soft">Version</dt>
-              <dd className="font-semibold text-primary">Latest Edition</dd>
+              <dt className="font-serif text-ink-soft/75">Version:</dt>
+              <dd className="font-serif font-bold text-primary">2026 Updated Edition</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-ink-soft">PDF File</dt>
-              <dd className="font-medium text-ink">resume.pdf</dd>
+              <dt className="font-serif text-ink-soft/75">PDF File:</dt>
+              <dd className="font-serif font-bold text-ink">{portfolio.resumeFileName}</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-ink-soft">Image Preview</dt>
-              <dd className="font-medium text-ink">High Res Page Preview</dd>
+              <dt className="font-serif text-ink-soft/75">Image Preview:</dt>
+              <dd className="font-serif font-bold text-ink">High Res Page Preview</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-ink-soft">Page Layout</dt>
-              <dd className="font-medium text-ink">A4 Standard Format</dd>
+              <dt className="font-serif text-ink-soft/75">Page Layout:</dt>
+              <dd className="font-serif font-bold text-ink">A4 Standard Format</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-ink-soft">Status</dt>
-              <dd className="inline-flex items-center gap-1 font-semibold text-green-600">
-                <CheckCircle2 size={14} /> Ready for Review
+              <dt className="font-serif text-ink-soft/75">Status:</dt>
+              <dd className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300/90 bg-emerald-50/80 px-3.5 py-0.5 text-xs font-semibold text-emerald-600">
+                <CheckCircle2 size={13} className="stroke-[2.5]" />
+                Ready for Review
               </dd>
             </div>
           </dl>

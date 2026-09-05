@@ -68,7 +68,7 @@ export default function Hero() {
               </Link>
               <a
                 href={portfolio.resumePdfPath}
-                download
+                download={portfolio.resumeFileName}
                 className="inline-flex items-center gap-2 rounded-full border border-surface-border bg-white px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
               >
                 <Download size={16} /> Download Resume

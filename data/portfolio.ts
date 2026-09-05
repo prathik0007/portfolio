@@ -48,7 +48,8 @@ export const portfolio = {
   },
 
   // Files
-  resumePdfPath: "/resume/resume.pdf",
+  resumeFileName: "Prathik-Resume-2026.pdf",
+  resumePdfPath: "/resume/Prathik-Resume-2026.pdf",
   resumePreviewImagePath: "/resume/resume-preview.png",
   profileImagePath: "/images/prathik.jpg",
 
