@@ -14,10 +14,10 @@ export const portfolio = {
   role: "Full-Stack Developer", // the first word is automatically highlighted in blue on the homepage
   tagline: "Full-Stack Developer & Tech Enthusiast", // used as page subtitle in nav drawer / about
 
-  // Hero introduction (matches Image 2 style)
+  // Hero introduction
   greeting: "Hi, I'm",
   introduction:
-    "Full-Stack & App Developer passionate about building high-performance applications. DSA enthusiast, consistent LeetCode problem solver (450+ solved), and competitive programming winner turning complex logic into impactful products.",
+    "Aspiring Application Developer with problem-solving skills and hands-on experience building web, Android, and backend applications. Passionate about creating real-world solutions and continuously growing as a developer.",
 
   // Personal details
   email: "your.email@example.com",
