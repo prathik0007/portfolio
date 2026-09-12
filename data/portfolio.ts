@@ -62,7 +62,7 @@ export const portfolio = {
     {
       value: "10+",
       title: "Technologies",
-      description: "Python, PHP, React, SQL",
+      description: "Python, Express, React, SQL",
     },
     {
       value: "100%",
