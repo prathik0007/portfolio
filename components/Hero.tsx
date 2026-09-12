@@ -4,6 +4,7 @@ import { Rocket, Download, Send, GraduationCap, Award, MapPin, CircleDot } from 
 import { portfolio } from "@/data/portfolio";
 import SocialLinks from "@/components/SocialLinks";
 import TypewriterRole from "@/components/TypewriterRole";
+import StatsSection from "@/components/StatsSection";
 
 export default function Hero() {
   const { infoCard } = portfolio;
@@ -185,6 +186,11 @@ export default function Hero() {
             </div>
           </div>
 
+        </div>
+
+        {/* Stats Highlight Row (Projects Built, Technologies, Dedication) */}
+        <div className="mt-12 lg:mt-16">
+          <StatsSection />
         </div>
       </div>
     </section>

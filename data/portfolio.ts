@@ -52,6 +52,25 @@ export const portfolio = {
     },
   },
 
+  // Stats Counters (Projects, Technologies, Dedication)
+  stats: [
+    {
+      value: "6+",
+      title: "Projects Built",
+      description: "Full Stack & Web Apps",
+    },
+    {
+      value: "10+",
+      title: "Technologies",
+      description: "Python, PHP, React, SQL",
+    },
+    {
+      value: "100%",
+      title: "Dedication",
+      description: "Clean & Scalable Code",
+    },
+  ],
+
   // Files
   resumeFileName: "Prathik-Resume-2026.pdf",
   resumePdfPath: "/resume/Prathik-Resume-2026.pdf",
