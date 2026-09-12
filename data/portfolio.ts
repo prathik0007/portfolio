@@ -11,7 +11,12 @@ export const portfolio = {
   name: "Prathik",
   shortName: "Prathik", // used in the About page "full name" field
   initials: "P", // shown in the header logo badge
-  role: "Full-Stack Developer", // the first word is automatically highlighted in blue on the homepage
+  role: "Full-Stack Developer", // fallback role
+  roles: [
+    "Full-Stack Developer",
+    "Python Developer",
+    "Backend Developer",
+  ],
   tagline: "Full-Stack Developer & Tech Enthusiast", // used as page subtitle in nav drawer / about
 
   // Hero introduction

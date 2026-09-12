@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Rocket, Download, Send, GraduationCap, Award, MapPin, CircleDot } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import SocialLinks from "@/components/SocialLinks";
+import TypewriterRole from "@/components/TypewriterRole";
 
 export default function Hero() {
   const { infoCard } = portfolio;
@@ -47,10 +48,9 @@ export default function Hero() {
               {portfolio.name}
             </h1>
 
-            {/* Role: Full-Stack in blue, Developer in ink */}
-            <p className="mt-2 font-sans text-2xl font-bold tracking-tight sm:text-3xl">
-              <span className="text-primary">{portfolio.role.split(" ")[0]}</span>{" "}
-              <span className="text-ink">{portfolio.role.split(" ").slice(1).join(" ")}</span>
+            {/* Role: dynamic typewriter cycling through roles */}
+            <p className="mt-2 min-h-[2.25rem] font-sans text-2xl font-bold tracking-tight sm:min-h-[2.5rem] sm:text-3xl">
+              <TypewriterRole roles={portfolio.roles || [portfolio.role]} />
             </p>
 
             {/* Bio */}
