@@ -1,15 +1,51 @@
 // ============================================================================
 // SKILLS, INTERESTS, AND OPPORTUNITIES DATA
-// Powers the Skills section, Interests, and Opportunities.
+// Sourced directly from Prathik's Resume
 // ============================================================================
+
+export interface SkillCategoryGroup {
+  category: string;
+  skills: string[];
+}
+
+// Grouped skills formatted cleanly matching resume
+export const resumeSkillGroups: SkillCategoryGroup[] = [
+  {
+    category: "Frontend",
+    skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js", "Tailwind CSS"],
+  },
+  {
+    category: "Backend",
+    skills: ["Python", "Flask", "Django", "Node.js", "Express.js"],
+  },
+  {
+    category: "Database",
+    skills: ["MongoDB", "MySQL", "PostgreSQL"],
+  },
+  {
+    category: "Mobile",
+    skills: ["Flutter", "Dart", "Firebase"],
+  },
+  {
+    category: "Languages",
+    skills: ["Python", "Java", "JavaScript", "Dart"],
+  },
+  {
+    category: "Tools",
+    skills: ["Git", "GitHub", "Gemini API", "Power BI"],
+  },
+  {
+    category: "Others",
+    skills: ["Problem Solving", "100+ LeetCode Solved", "Machine Learning (AI)"],
+  },
+];
 
 export type Skill = {
   id: string;
   name: string;
-  percentage: number; // 0 - 100
+  percentage: number;
 };
 
-// Original overview skills (matches Screenshot 3)
 export const skills: Skill[] = [
   { id: "frontend", name: "Frontend Development", percentage: 85 },
   { id: "backend", name: "Backend Development", percentage: 80 },
@@ -27,45 +63,25 @@ export type DetailedSkill = {
 };
 
 export const categorizedSkills: DetailedSkill[] = [
-  // Programming Languages
-  { name: "JavaScript (ES6+)", category: "Languages", proficiency: "Advanced", percentage: 92, highlight: true },
-  { name: "TypeScript", category: "Languages", proficiency: "Advanced", percentage: 88, highlight: true },
-  { name: "Python", category: "Languages", proficiency: "Advanced", percentage: 85 },
-  { name: "Java", category: "Languages", proficiency: "Proficient", percentage: 78 },
-  { name: "C / C++", category: "Languages", proficiency: "Proficient", percentage: 75 },
-  { name: "SQL", category: "Languages", proficiency: "Advanced", percentage: 84 },
-
-  // Frontend
+  { name: "Python", category: "Languages", proficiency: "Advanced", percentage: 90, highlight: true },
+  { name: "Java", category: "Languages", proficiency: "Advanced", percentage: 85 },
+  { name: "JavaScript", category: "Languages", proficiency: "Advanced", percentage: 88, highlight: true },
+  { name: "Dart", category: "Languages", proficiency: "Proficient", percentage: 80 },
   { name: "React.js", category: "Frontend", proficiency: "Advanced", percentage: 92, highlight: true },
-  { name: "Next.js (App Router)", category: "Frontend", proficiency: "Advanced", percentage: 90, highlight: true },
-  { name: "Tailwind CSS", category: "Frontend", proficiency: "Advanced", percentage: 94, highlight: true },
-  { name: "HTML5 & Modern CSS", category: "Frontend", proficiency: "Expert", percentage: 95 },
-  { name: "Redux / Zustand", category: "Frontend", proficiency: "Proficient", percentage: 82 },
-  { name: "Responsive & Mobile UI", category: "Frontend", proficiency: "Advanced", percentage: 90 },
-
-  // Backend
+  { name: "Next.js", category: "Frontend", proficiency: "Advanced", percentage: 88, highlight: true },
+  { name: "HTML5", category: "Frontend", proficiency: "Expert", percentage: 95 },
+  { name: "CSS3", category: "Frontend", proficiency: "Expert", percentage: 92 },
+  { name: "Tailwind CSS", category: "Frontend", proficiency: "Advanced", percentage: 90 },
+  { name: "Flask", category: "Backend", proficiency: "Advanced", percentage: 85, highlight: true },
+  { name: "Django", category: "Backend", proficiency: "Proficient", percentage: 80 },
   { name: "Node.js", category: "Backend", proficiency: "Advanced", percentage: 88, highlight: true },
   { name: "Express.js", category: "Backend", proficiency: "Advanced", percentage: 86 },
-  { name: "RESTful API Architecture", category: "Backend", proficiency: "Advanced", percentage: 90, highlight: true },
-  { name: "FastAPI / Django", category: "Backend", proficiency: "Proficient", percentage: 78 },
-  { name: "Authentication (JWT, OAuth)", category: "Backend", proficiency: "Advanced", percentage: 85 },
-  { name: "GraphQL", category: "Backend", proficiency: "Proficient", percentage: 74 },
-
-  // Database & Cloud
-  { name: "PostgreSQL", category: "Database & Cloud", proficiency: "Advanced", percentage: 85, highlight: true },
-  { name: "MongoDB", category: "Database & Cloud", proficiency: "Advanced", percentage: 84 },
-  { name: "MySQL", category: "Database & Cloud", proficiency: "Proficient", percentage: 82 },
-  { name: "Redis", category: "Database & Cloud", proficiency: "Proficient", percentage: 76 },
-  { name: "AWS (S3, EC2, Lambda)", category: "Database & Cloud", proficiency: "Proficient", percentage: 75 },
-  { name: "Supabase & Firebase", category: "Database & Cloud", proficiency: "Advanced", percentage: 86 },
-
-  // Tools & DevOps
-  { name: "Git & GitHub", category: "Tools & DevOps", proficiency: "Advanced", percentage: 92, highlight: true },
-  { name: "Docker", category: "Tools & DevOps", proficiency: "Proficient", percentage: 76 },
-  { name: "Postman", category: "Tools & DevOps", proficiency: "Advanced", percentage: 88 },
-  { name: "Linux / Bash", category: "Tools & DevOps", proficiency: "Proficient", percentage: 80 },
-  { name: "Vercel & Netlify CI/CD", category: "Tools & DevOps", proficiency: "Advanced", percentage: 90 },
-  { name: "VS Code & Debugging", category: "Tools & DevOps", proficiency: "Expert", percentage: 95 },
+  { name: "MongoDB", category: "Database & Cloud", proficiency: "Advanced", percentage: 85 },
+  { name: "MySQL", category: "Database & Cloud", proficiency: "Advanced", percentage: 85 },
+  { name: "PostgreSQL", category: "Database & Cloud", proficiency: "Proficient", percentage: 80 },
+  { name: "Firebase", category: "Database & Cloud", proficiency: "Proficient", percentage: 82 },
+  { name: "Git", category: "Tools & DevOps", proficiency: "Advanced", percentage: 90, highlight: true },
+  { name: "GitHub", category: "Tools & DevOps", proficiency: "Advanced", percentage: 92, highlight: true },
 ];
 
 export const skillCategories = [
@@ -99,19 +115,19 @@ export const opportunities: Opportunity[] = [
   {
     id: "opp-frontend",
     title: "Frontend Development",
-    description: "Seeking internship opportunities in React, Next.js, and modern frontend technologies",
+    description: "Seeking opportunities in React, Next.js, and modern web application development",
     tags: ["React", "Next.js", "Javascript"],
   },
   {
     id: "opp-backend",
     title: "Backend Development",
-    description: "Looking for internship roles in Node.js, databases, and server-side development",
-    tags: ["Node.js", "MongoDB", "Express"],
+    description: "Looking for roles in Python, Node.js, Express, databases, and server-side development",
+    tags: ["Node.js", "Python", "Flask", "MongoDB"],
   },
   {
     id: "opp-mobile",
     title: "Mobile App Development",
-    description: "Interested in React Native and cross-platform mobile development internships",
-    tags: ["React Native", "Flutter", "Mobile UI"],
+    description: "Interested in Flutter, Dart, and cross-platform mobile development",
+    tags: ["Flutter", "Dart", "Firebase"],
   },
 ];

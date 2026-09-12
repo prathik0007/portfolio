@@ -1,45 +1,31 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { skills } from "@/data/skills";
+import { resumeSkillGroups } from "@/data/skills";
 
 export default function Skills() {
-  const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={ref} className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-      {skills.map((skill) => (
-        <div
-          key={skill.id}
-          className="rounded-2xl border border-surface-border bg-white p-6 shadow-card"
-        >
-          <p className="font-serif text-lg font-bold text-ink">{skill.name}</p>
-          <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-surface-muted">
-            <div
-              className="skill-bar-fill h-full rounded-full bg-primary"
-              style={{ width: inView ? `${skill.percentage}%` : "0%" }}
-            />
+    <div className="space-y-8 sm:space-y-10">
+      {resumeSkillGroups.map((group) => (
+        <div key={group.category} className="space-y-3.5">
+          {/* Category Header with vertical bar */}
+          <div className="flex items-center gap-2">
+            <span className="select-none text-xl font-black text-primary sm:text-2xl">
+              |
+            </span>
+            <h3 className="font-sans text-lg font-bold tracking-tight text-primary sm:text-xl">
+              {group.category}
+            </h3>
           </div>
-          <p className="mt-2 text-right text-sm font-semibold text-ink-soft">
-            {skill.percentage}%
-          </p>
+
+          {/* Skill Badges */}
+          <div className="flex flex-wrap gap-2.5 sm:gap-3">
+            {group.skills.map((skill) => (
+              <span
+                key={skill}
+                className="inline-flex cursor-default items-center justify-center rounded-xl border border-surface-border bg-white px-5 py-2 text-sm font-semibold text-ink shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary hover:shadow-card sm:rounded-2xl sm:px-6 sm:py-2.5 sm:text-base"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       ))}
     </div>
