@@ -2,28 +2,28 @@ import { resumeSkillGroups } from "@/data/skills";
 
 export default function Skills() {
   return (
-    <div className="space-y-8 sm:space-y-10">
+    <div className="space-y-10 sm:space-y-12">
       {resumeSkillGroups.map((group) => (
-        <div key={group.category} className="space-y-3.5">
+        <div key={group.category} className="space-y-4">
           {/* Category Header with vertical bar */}
-          <div className="flex items-center gap-2">
-            <span className="select-none text-xl font-black text-primary sm:text-2xl">
+          <div className="flex items-center">
+            <span className="mr-2.5 select-none text-xl font-black text-primary sm:text-2xl">
               |
             </span>
-            <h3 className="font-sans text-lg font-bold tracking-tight text-primary sm:text-xl">
+            <h3 className="font-sans text-xl font-bold tracking-tight text-primary sm:text-2xl">
               {group.category}
             </h3>
           </div>
 
-          {/* Skill Badges */}
-          <div className="flex flex-wrap gap-2.5 sm:gap-3">
+          {/* Uniform Skill Badges */}
+          <div className="flex flex-wrap gap-3 sm:gap-4">
             {group.skills.map((skill) => (
-              <span
+              <div
                 key={skill}
-                className="inline-flex cursor-default items-center justify-center rounded-xl border border-surface-border bg-white px-5 py-2 text-sm font-semibold text-ink shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary hover:shadow-card sm:rounded-2xl sm:px-6 sm:py-2.5 sm:text-base"
+                className="flex h-12 w-[calc(50%-6px)] cursor-default items-center justify-center rounded-xl border border-surface-border bg-white px-3 text-center text-sm font-semibold text-ink shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary hover:shadow-card sm:h-13 sm:w-[160px] sm:rounded-2xl sm:text-[15px] md:w-[172px] lg:w-[180px]"
               >
-                {skill}
-              </span>
+                <span className="truncate">{skill}</span>
+              </div>
             ))}
           </div>
         </div>

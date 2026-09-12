@@ -12,7 +12,7 @@ export interface SkillCategoryGroup {
 export const resumeSkillGroups: SkillCategoryGroup[] = [
   {
     category: "Frontend",
-    skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js", "Tailwind CSS"],
+    skills: ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Next.js", "Tailwind CSS"],
   },
   {
     category: "Backend",
@@ -20,23 +20,19 @@ export const resumeSkillGroups: SkillCategoryGroup[] = [
   },
   {
     category: "Database",
-    skills: ["MongoDB", "MySQL", "PostgreSQL"],
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
   },
   {
     category: "Mobile",
-    skills: ["Flutter", "Dart", "Firebase"],
+    skills: ["Flutter", "Dart", "Kotlin", "Firebase"],
   },
   {
     category: "Languages",
-    skills: ["Python", "Java", "JavaScript", "Dart"],
-  },
-  {
-    category: "Tools",
-    skills: ["Git", "GitHub", "Gemini API", "Power BI"],
+    skills: ["Python", "Java", "C", "JavaScript", "Dart"],
   },
   {
     category: "Others",
-    skills: ["Problem Solving", "100+ LeetCode Solved", "Machine Learning (AI)"],
+    skills: ["Problem Solving", "Intermediate-DSA", "System Design", "Git / GitHub"],
   },
 ];
 
