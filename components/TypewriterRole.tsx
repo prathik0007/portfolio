@@ -49,27 +49,12 @@ export default function TypewriterRole({ roles }: TypewriterRoleProps) {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, roleIndex, roleList, isMounted]);
 
-  // Determine styling: first word is highlighted in primary blue, rest in ink
-  const currentRole = roleList[roleIndex % roleList.length] || "";
-  const firstWord = currentRole.split(" ")[0] || "";
-
-  let primaryPart = "";
-  let inkPart = "";
-
-  if (displayText.length <= firstWord.length) {
-    primaryPart = displayText;
-  } else {
-    primaryPart = firstWord;
-    inkPart = displayText.slice(firstWord.length);
-  }
-
   return (
     <span className="inline-flex items-baseline">
-      <span className="text-primary">{primaryPart}</span>
-      <span className="text-ink">{inkPart}</span>
+      <span className="text-primary whitespace-pre font-bold">{displayText}</span>
       <span
         aria-hidden="true"
-        className="ml-1 inline-block h-[0.8em] w-[2.5px] translate-y-[1px] rounded-full bg-primary animate-pulse"
+        className="ml-1.5 inline-block h-[0.8em] w-[2.5px] translate-y-[1px] rounded-full bg-primary animate-pulse"
       />
     </span>
   );
