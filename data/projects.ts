@@ -64,7 +64,6 @@ export const projects: Project[] = [
       "Neon DB",
       "AI APIs",
       "REST APIs",
-      "Tailwind CSS",
       "Vercel",
     ],
     liveDemoUrl: "https://githubrepo-ten.vercel.app/",
