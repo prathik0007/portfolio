@@ -8,21 +8,23 @@ export type CertificateCategory =
   | "All"
   | "Cloud & DevOps"
   | "Web Development"
-  | "Problem Solving & CS"
-  | "Database & Backend";
+  | "AI & Machine Learning"
+  | "Workshops & Training";
 
 export type Certificate = {
   id: string;
   title: string;
   issuer: string;
-  issuerBadge?: string; // Optional logo/badge identifier or path
+  issuerBadge?: string;
   issueDate: string;
   expiryDate?: string;
   credentialId?: string;
   credentialUrl?: string;
-  category: "Cloud & DevOps" | "Web Development" | "Problem Solving & CS" | "Database & Backend";
+  category: "Cloud & DevOps" | "Web Development" | "AI & Machine Learning" | "Workshops & Training";
   skills: string[];
   description: string;
+  image: string;
+  pdfUrl?: string;
   featured?: boolean;
 };
 
@@ -30,93 +32,111 @@ export const certificateCategories: CertificateCategory[] = [
   "All",
   "Cloud & DevOps",
   "Web Development",
-  "Problem Solving & CS",
-  "Database & Backend",
+  "AI & Machine Learning",
+  "Workshops & Training",
 ];
 
 export const certificates: Certificate[] = [
   {
-    id: "aws-certified-solutions-architect",
-    title: "AWS Certified Solutions Architect – Associate",
-    issuer: "Amazon Web Services (AWS)",
-    issueDate: "2024",
-    expiryDate: "2027",
-    credentialId: "AWS-SAA-84920194",
-    credentialUrl: "https://aws.amazon.com/verification",
+    id: "oracle-cloud-infrastructure-2025",
+    title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+    issuer: "Oracle University",
+    issueDate: "May 2026",
+    credentialId: "103456572OCI25FNDCFA",
+    credentialUrl: "/certificates/oracle-cloud-2025.pdf",
+    image: "/certificates/oracle-cloud-2025.png",
+    pdfUrl: "/certificates/oracle-cloud-2025.pdf",
     category: "Cloud & DevOps",
-    skills: ["AWS Cloud", "EC2 & S3", "IAM Security", "VPC & Networking", "High Availability"],
+    skills: [
+      "Oracle Cloud Infrastructure (OCI)",
+      "Cloud Architecture",
+      "IAM Security",
+      "Virtual Cloud Networks (VCN)",
+      "Compute & Storage",
+      "Cloud Governance",
+    ],
     description:
-      "Validates expertise in designing highly available, cost-efficient, fault-tolerant, and scalable distributed systems on AWS.",
+      "Recognized by Oracle Corporation as an Oracle Certified Foundations Associate, validating foundational expertise in core OCI cloud architecture, security, identity management, and computing infrastructure.",
     featured: true,
   },
   {
-    id: "meta-frontend-developer",
-    title: "Meta Front-End Developer Professional Certificate",
-    issuer: "Meta",
-    issueDate: "2024",
-    expiryDate: "Does not expire",
-    credentialId: "META-FED-5739281",
-    credentialUrl: "https://www.coursera.org/verify/professional-cert/meta-frontend",
+    id: "accelerating-deep-learning-with-gpus",
+    title: "Accelerating Deep Learning with GPUs",
+    issuer: "Cognitive Class (IBM Developer Skills Network)",
+    issueDate: "July 2025",
+    credentialId: "78b713b4d6b9452f93e13d6428d822a9",
+    credentialUrl: "https://courses.cognitiveclass.ai/certificates/78b713b4d6b9452f93e13d6428d822a9",
+    image: "/certificates/deep-learning-gpus.png",
+    pdfUrl: "/certificates/deep-learning-gpus.pdf",
+    category: "AI & Machine Learning",
+    skills: [
+      "Deep Learning",
+      "GPU Acceleration",
+      "Neural Networks",
+      "IBM Developer Skills",
+      "Hardware Acceleration",
+      "Model Optimization",
+    ],
+    description:
+      "Course (ML0122ENv3) powered by IBM Developer Skills Network on cognitiveclass.ai, validating deep learning architectures and GPU acceleration techniques for high-performance training.",
+    featured: true,
+  },
+  {
+    id: "learning-full-stack-development-infosys",
+    title: "Learning Full Stack Development",
+    issuer: "Infosys Springboard",
+    issueDate: "July 2025",
+    credentialUrl: "https://verify.onwingspan.com",
+    image: "/certificates/infosys-fullstack.jpg",
     category: "Web Development",
-    skills: ["React.js", "JavaScript (ES6+)", "UI/UX Principles", "Version Control", "Responsive Design"],
+    skills: [
+      "Full Stack Development",
+      "Frontend Engineering",
+      "Backend Architecture",
+      "Database Integration",
+      "RESTful APIs",
+    ],
     description:
-      "Demonstrated proficiency in building interactive web apps using modern React, state management, component architecture, and responsive UI design.",
+      "Awarded by Infosys Limited / Infosys Springboard for successfully completing comprehensive full-stack development coursework, covering end-to-end web engineering principles.",
     featured: true,
   },
   {
-    id: "hackerrank-problem-solving-adv",
-    title: "Problem Solving (Advanced) Certificate",
-    issuer: "HackerRank",
-    issueDate: "2024",
-    expiryDate: "Does not expire",
-    credentialId: "HR-PS-ADV-293810",
-    credentialUrl: "https://www.hackerrank.com/certificates",
-    category: "Problem Solving & CS",
-    skills: ["Data Structures", "Algorithms", "Dynamic Programming", "Graph Theory", "Optimization"],
+    id: "employability-skill-training-programme",
+    title: "Employability Skill Training Programme",
+    issuer: "Mahindra Pride Classroom & Naandi Foundation",
+    issueDate: "March 2026",
+    credentialUrl: "/certificates/mahindra-pride.jpg",
+    image: "/certificates/mahindra-pride.jpg",
+    category: "Workshops & Training",
+    skills: [
+      "Employability Skills",
+      "Professional Communication",
+      "Problem Solving",
+      "Teamwork & Leadership",
+      "Workplace Readiness",
+    ],
     description:
-      "Demonstrated advanced problem-solving capabilities in complex data structures, graph traversals, and dynamic programming.",
-    featured: true,
-  },
-  {
-    id: "google-cloud-digital-leader",
-    title: "Google Cloud Associate Cloud Engineer",
-    issuer: "Google Cloud",
-    issueDate: "2023",
-    expiryDate: "2026",
-    credentialId: "GCP-ACE-1049284",
-    credentialUrl: "https://cloud.google.com/certification",
-    category: "Cloud & DevOps",
-    skills: ["GCP", "Kubernetes (GKE)", "Compute Engine", "Cloud Storage", "Cloud IAM"],
-    description:
-      "Demonstrated ability to deploy applications, monitor operations, and manage enterprise solutions on Google Cloud Platform.",
+      "Awarded on successful completion of the Employability Skill Training Programme conducted by Mahindra Pride Classroom and Naandi Foundation at NMAM Institute of Technology.",
     featured: false,
   },
   {
-    id: "mongodb-certified-developer",
-    title: "MongoDB Certified Node.js Developer",
-    issuer: "MongoDB University",
-    issueDate: "2023",
-    expiryDate: "Does not expire",
-    credentialId: "MDB-DEV-8823901",
-    credentialUrl: "https://university.mongodb.com",
-    category: "Database & Backend",
-    skills: ["MongoDB", "Mongoose", "Aggregation Pipeline", "Indexing", "Database Modeling"],
+    id: "research-methodology-and-publication",
+    title: "Research Methodology and Publication",
+    issuer: "NMAM Institute of Technology, Nitte (DU)",
+    issueDate: "November 2025",
+    credentialUrl: "/certificates/research-methodology.pdf",
+    image: "/certificates/research-methodology.png",
+    pdfUrl: "/certificates/research-methodology.pdf",
+    category: "Workshops & Training",
+    skills: [
+      "Research Methodology",
+      "Scientific Writing",
+      "Academic Publication",
+      "Literature Review",
+      "Computer Applications",
+    ],
     description:
-      "Validated proficiency in building scalable backend services, schema design, aggregation framework, and document database performance tuning.",
-    featured: false,
-  },
-  {
-    id: "postman-api-expert",
-    title: "Postman API Fundamentals Student Expert",
-    issuer: "Postman",
-    issueDate: "2023",
-    expiryDate: "Does not expire",
-    credentialId: "POSTMAN-ST-EXP-3921",
-    credentialUrl: "https://badgr.com/public/badges",
-    category: "Web Development",
-    skills: ["REST APIs", "API Testing", "Postman Collections", "Automation", "CI/CD"],
-    description:
-      "Certified mastery in API design, automated test suites, documentation, and mock servers using Postman.",
+      "Two-day academic workshop organized by the Department of Master of Computer Applications (MCA), NMAM Institute of Technology, Nitte (Deemed to be University), focusing on research methods and publication standards.",
     featured: false,
   },
 ];
