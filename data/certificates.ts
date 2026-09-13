@@ -9,6 +9,8 @@ export type CertificateCategory =
   | "Cloud & DevOps"
   | "Web Development"
   | "AI & Machine Learning"
+  | "Data & Analytics"
+  | "Internships & Experience"
   | "Workshops & Training";
 
 export type Certificate = {
@@ -20,7 +22,7 @@ export type Certificate = {
   expiryDate?: string;
   credentialId?: string;
   credentialUrl?: string;
-  category: "Cloud & DevOps" | "Web Development" | "AI & Machine Learning" | "Workshops & Training";
+  category: CertificateCategory;
   skills: string[];
   description: string;
   image: string;
@@ -33,6 +35,8 @@ export const certificateCategories: CertificateCategory[] = [
   "Cloud & DevOps",
   "Web Development",
   "AI & Machine Learning",
+  "Data & Analytics",
+  "Internships & Experience",
   "Workshops & Training",
 ];
 
@@ -79,6 +83,47 @@ export const certificates: Certificate[] = [
     ],
     description:
       "Course (ML0122ENv3) powered by IBM Developer Skills Network on cognitiveclass.ai, validating deep learning architectures and GPU acceleration techniques for high-performance training.",
+    featured: true,
+  },
+  {
+    id: "udemy-power-bi-business-intelligence",
+    title: "Microsoft Power BI Desktop for Business Intelligence",
+    issuer: "Udemy (Maven Analytics)",
+    issueDate: "August 2025",
+    credentialId: "UC-24a1caeb-1690-4fac-bb70-ee1fc1472932",
+    credentialUrl: "https://ude.my/UC-24a1caeb-1690-4fac-bb70-ee1fc1472932",
+    image: "/certificates/udemy-power-bi.jpg",
+    category: "Data & Analytics",
+    skills: [
+      "Power BI Desktop",
+      "Business Intelligence",
+      "DAX Formulas",
+      "Data Modeling",
+      "Dashboard Design",
+      "Data Visualization",
+    ],
+    description:
+      "Comprehensive 17-hour course completion certificate taught by Maven Analytics, certifying mastery in Power BI data transformations, tabular data modeling, DAX measures, and interactive reporting.",
+    featured: true,
+  },
+  {
+    id: "thaniya-technologies-internship",
+    title: "Final Year Project Work / Internship – BOTANEO",
+    issuer: "Thaniya Technologies (MSME Govt. of India)",
+    issueDate: "May 2025",
+    credentialId: "U05HS22S0044",
+    credentialUrl: "/certificates/thaniya-technologies-internship.jpg",
+    image: "/certificates/thaniya-technologies-internship.jpg",
+    category: "Internships & Experience",
+    skills: [
+      "Project Work (BOTANEO)",
+      "Full Stack Engineering",
+      "Logical & Analytical Skills",
+      "Software Design",
+      "Industry Internship",
+    ],
+    description:
+      "Certificate of Completion for successfully executing final-year project work and internship on project 'BOTANEO' from February 10, 2025 to May 10, 2025 at Thaniya Technologies, Mangalore.",
     featured: true,
   },
   {
