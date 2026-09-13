@@ -3,7 +3,7 @@ export default function Skills() {
     <div className="mx-auto max-w-4xl space-y-6 text-base text-ink-soft sm:text-lg">
       <p className="text-justify leading-relaxed sm:leading-8">
         Hi, I&apos;m{" "}
-        <span className="font-bold text-primary">Prathik</span> — a full-stack
+        <strong className="font-bold text-ink">Prathik</strong> — a full-stack
         developer focused on building{" "}
         <strong className="font-bold text-ink">fast</strong>,{" "}
         <strong className="font-bold text-ink">scalable</strong>, and{" "}
@@ -29,7 +29,7 @@ export default function Skills() {
 
       <p className="text-justify leading-relaxed sm:leading-8">
         I also strengthen my fundamentals in{" "}
-        <span className="font-bold text-primary">DSA</span>,{" "}
+        <strong className="font-bold text-ink">DSA</strong>,{" "}
         <strong className="font-bold text-ink">system design</strong>, and{" "}
         <strong className="font-bold text-ink">performance optimization</strong> —
         because good engineering is about long-term reliability, not just
@@ -44,9 +44,9 @@ export default function Skills() {
         <strong className="font-bold text-ink">MongoDB</strong>. I can design
         efficient schemas, write optimized queries, and build secure CRUD-based
         systems with proper validation. I understand key database concepts like{" "}
-        <span className="font-bold text-primary">normalization</span>,{" "}
-        <span className="font-bold text-primary">indexes</span>, and{" "}
-        <span className="font-bold text-primary">relationships</span>.
+        <strong className="font-bold text-ink">normalization</strong>,{" "}
+        <strong className="font-bold text-ink">indexes</strong>, and{" "}
+        <strong className="font-bold text-ink">relationships</strong>.
       </p>
 
       {/* What I Bring Card */}
