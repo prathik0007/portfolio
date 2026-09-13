@@ -50,12 +50,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Technical skills */}
+      {/* About overview */}
       <section className="mt-20">
-        <SectionHeading title="Technical" highlight="Skills" />
-        <div className="mt-10">
-          <Skills />
-        </div>
+        <Skills />
       </section>
 
       {/* Interests */}

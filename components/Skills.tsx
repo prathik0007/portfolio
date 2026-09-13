@@ -1,7 +1,7 @@
 export default function Skills() {
   return (
-    <div className="space-y-6 text-base leading-relaxed text-ink-soft sm:text-lg">
-      <p>
+    <div className="mx-auto max-w-4xl space-y-6 text-base text-ink-soft sm:text-lg">
+      <p className="text-justify leading-relaxed sm:leading-8">
         Hi, I&apos;m{" "}
         <span className="font-bold text-primary">Prathik</span> — a full-stack
         developer focused on building{" "}
@@ -12,7 +12,7 @@ export default function Skills() {
         production-ready code.
       </p>
 
-      <p>
+      <p className="text-justify leading-relaxed sm:leading-8">
         I work with{" "}
         <strong className="font-bold text-ink">Python</strong>,{" "}
         <strong className="font-bold text-ink">Flask</strong>,{" "}
@@ -27,7 +27,7 @@ export default function Skills() {
         <strong className="font-bold text-ink">efficient</strong>, and easy to scale.
       </p>
 
-      <p>
+      <p className="text-justify leading-relaxed sm:leading-8">
         I also strengthen my fundamentals in{" "}
         <span className="font-bold text-primary">DSA</span> (100+ LeetCode
         problems solved),{" "}
@@ -37,7 +37,7 @@ export default function Skills() {
         &ldquo;making it work.&rdquo;
       </p>
 
-      <p>
+      <p className="text-justify leading-relaxed sm:leading-8">
         I also have strong hands-on experience with databases, including{" "}
         <strong className="font-bold text-ink">MySQL</strong>,{" "}
         <strong className="font-bold text-ink">SQLite</strong>,{" "}
@@ -51,7 +51,7 @@ export default function Skills() {
       </p>
 
       {/* What I Bring Card */}
-      <div className="mt-8 rounded-2xl border border-surface-border bg-surface-muted/40 p-6 sm:p-8 shadow-sm transition-all hover:border-primary/30 hover:shadow-card">
+      <div className="mt-10 flex flex-col items-center justify-center rounded-2xl border border-surface-border bg-surface-muted/40 p-6 text-center shadow-sm transition-all hover:border-primary/30 hover:shadow-card sm:p-8">
         <h4 className="font-sans text-xl font-bold tracking-tight text-ink">
           What I Bring
         </h4>
