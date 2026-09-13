@@ -19,13 +19,14 @@ export default function ProjectCarousel({
   }
 
   return (
-    <div className="relative h-56 w-full overflow-hidden rounded-t-2xl bg-surface-muted sm:h-72">
+    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950 flex items-center justify-center border-b border-surface-border/40">
       <Image
         src={images[index]}
         alt={`${title} screenshot ${index + 1}`}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover transition-opacity duration-300"
+        className="object-contain transition-opacity duration-300"
+        priority={index === 0}
       />
 
       {hasMultiple && (
