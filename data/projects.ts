@@ -20,15 +20,30 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "project-one",
+    id: "estate-predict",
     number: "01",
-    title: "Project Name One",
+    title: "EstatePredict | Online Property Rental & AI Price Prediction",
     description:
-      "A short, clear description of this project goes here. Explain the problem it solves, who it's for, and what makes it interesting.",
-    images: ["/images/project-1.jpg"],
-    technologies: ["Next.js", "React", "Node.js", "MongoDB"],
-    liveDemoUrl: "https://example.com",
-    sourceCodeUrl: "https://github.com/yourusername/project-one",
+      "A multimodal AI-powered property rental and valuation platform. Features calibrated fair market price estimation with 95% conformal prediction intervals, SHAP feature explainability, verified rental listings, and interactive geospatial mapping.",
+    images: [
+      "/images/estatepredict/estatepredict-1.png",
+      "/images/estatepredict/estatepredict-2.png",
+      "/images/estatepredict/estatepredict-3.png",
+      "/images/estatepredict/estatepredict-4.png",
+      "/images/estatepredict/estatepredict-5.png",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "Machine Learning",
+      "LightGBM",
+      "Python",
+      "SHAP",
+      "Tailwind CSS",
+      "Vercel",
+    ],
+    liveDemoUrl: "https://rental-price-prediction.vercel.app/",
+    sourceCodeUrl: "https://github.com/prathik0007/EstatePredict",
   },
   {
     id: "project-two",
