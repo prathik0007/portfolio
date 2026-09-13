@@ -29,8 +29,7 @@ export default function Skills() {
 
       <p className="text-justify leading-relaxed sm:leading-8">
         I also strengthen my fundamentals in{" "}
-        <span className="font-bold text-primary">DSA</span> (100+ LeetCode
-        problems solved),{" "}
+        <span className="font-bold text-primary">DSA</span>,{" "}
         <strong className="font-bold text-ink">system design</strong>, and{" "}
         <strong className="font-bold text-ink">performance optimization</strong> —
         because good engineering is about long-term reliability, not just
