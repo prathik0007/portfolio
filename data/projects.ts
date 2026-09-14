@@ -72,7 +72,7 @@ export const projects: Project[] = [
   {
     id: "leaflens-ai-farm-detector",
     number: "03",
-    title: "LeafLens - AI Farm Detector",
+    title: "LeafLens",
     description:
       "An intelligent agricultural and plant health diagnostic platform designed for farmers. Leverages computer vision and multimodal AI to identify plant species from uploaded photos, diagnose leaf diseases with treatment plans, provide agronomic guidance (soil, water, sunlight, and fertilizer), and support regional Indian languages (English, Hindi, Kannada).",
     images: [
@@ -88,7 +88,6 @@ export const projects: Project[] = [
       "Python",
       "Flask",
       "MongoDB",
-      "Multimodal AI",
       "Vercel",
     ],
     liveDemoUrl: "https://leaf-lens-git-main-github-code-explorer.vercel.app/",
@@ -112,7 +111,6 @@ export const projects: Project[] = [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "REST APIs",
       "Vercel",
     ],
     liveDemoUrl: "https://novamart-ecommerce-sigma.vercel.app/",
@@ -136,7 +134,6 @@ export const projects: Project[] = [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "REST APIs",
       "Vercel",
     ],
     liveDemoUrl: "https://project-management-tool-rust-rho.vercel.app/",
