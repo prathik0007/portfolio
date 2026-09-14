@@ -14,10 +14,7 @@ import {
   ExternalLink,
   Calendar,
   Building2,
-  ShieldCheck,
   CheckCircle,
-  Copy,
-  Check,
   Eye,
   X,
   FileText,
@@ -26,21 +23,12 @@ import {
 
 export default function CertificatesSection({ id = "certificates" }: { id?: string }) {
   const [activeCategory, setActiveCategory] = useState<CertificateCategory>("All");
-  const [copiedId, setCopiedId] = useState<string | null>(null);
   const [previewCert, setPreviewCert] = useState<Certificate | null>(null);
 
   const filteredCertificates =
     activeCategory === "All"
       ? certificates
       : certificates.filter((c) => c.category === activeCategory);
-
-  function copyCredentialId(credId: string) {
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(credId);
-      setCopiedId(credId);
-      setTimeout(() => setCopiedId(null), 2000);
-    }
-  }
 
   // Handle ESC key to close modal
   useEffect(() => {
@@ -155,37 +143,6 @@ export default function CertificatesSection({ id = "certificates" }: { id?: stri
                   <p className="mt-2 text-xs leading-relaxed text-ink-soft line-clamp-3">
                     {cert.description}
                   </p>
-
-                  {/* Credential ID badge with copy action */}
-                  {cert.credentialId && (
-                    <div className="mt-3.5 flex items-center justify-between rounded-lg border border-surface-border bg-surface-muted/80 px-3 py-1.5 text-xs text-ink-soft">
-                      <span className="flex items-center gap-1 font-mono text-[11px] font-medium truncate mr-2">
-                        <ShieldCheck size={13} className="text-primary flex-none" />
-                        <span className="truncate">{cert.credentialId}</span>
-                      </span>
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          copyCredentialId(cert.credentialId!);
-                        }}
-                        title="Copy Credential ID"
-                        className="inline-flex items-center gap-1 text-[11px] font-medium text-ink-soft hover:text-primary transition-colors flex-none"
-                      >
-                        {copiedId === cert.credentialId ? (
-                          <>
-                            <Check size={12} className="text-emerald-600" />
-                            <span className="text-emerald-600 font-semibold">Copied</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy size={12} />
-                            <span>Copy</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-                  )}
 
                   {/* Skills tags */}
                   <div className="mt-3.5">
