@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     id: "estate-predict",
     number: "01",
-    title: "EstatePredict | Online Property Rental & AI Price Prediction",
+    title: "EstatePredict — Rental Price Prediction",
     description:
       "A multimodal AI-powered property rental and valuation platform. Features calibrated fair market price estimation with 95% conformal prediction intervals, SHAP feature explainability, verified rental listings, and interactive geospatial mapping.",
     images: [
@@ -141,5 +141,26 @@ export const projects: Project[] = [
     ],
     liveDemoUrl: "https://project-management-tool-rust-rho.vercel.app/",
     sourceCodeUrl: "https://github.com/prathik0007/project-management-tool",
+  },
+  {
+    id: "tastebite-restaurant",
+    number: "06",
+    title: "TasteBite — Restaurant & Culinary Showcase Platform",
+    description:
+      "A modern, responsive dining web application designed for TasteBite restaurant. Features interactive culinary showcases, dynamic digital menus with transparent pricing, an about section detailing the restaurant's culinary philosophy, and a direct customer inquiry and reservation interface.",
+    images: [
+      "/images/tastebite/tastebite-1.png",
+      "/images/tastebite/tastebite-2.png",
+      "/images/tastebite/tastebite-3.png",
+      "/images/tastebite/tastebite-4.png",
+    ],
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Vercel",
+    ],
+    liveDemoUrl: "https://taste-bite-psi.vercel.app/",
+    sourceCodeUrl: "https://github.com/prathik0007/TasteBite",
   },
 ];

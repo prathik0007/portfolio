@@ -15,13 +15,13 @@ export default function ProjectCarousel({
   const [isPaused, setIsPaused] = useState(false);
   const hasMultiple = images.length > 1;
 
-  // Live auto-rotation every 3.5 seconds (pauses on hover)
+  // Live auto-rotation every 2.2 seconds (pauses on hover)
   useEffect(() => {
     if (!hasMultiple || isPaused) return;
 
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3500);
+    }, 2200);
 
     return () => clearInterval(timer);
   }, [hasMultiple, isPaused, images.length]);
@@ -44,7 +44,7 @@ export default function ProjectCarousel({
           alt={`${title} screenshot ${i + 1}`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className={`object-contain transition-opacity duration-700 ease-in-out ${
+          className={`object-contain transition-opacity duration-500 ease-in-out ${
             i === index ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
           }`}
           priority={i === 0}
