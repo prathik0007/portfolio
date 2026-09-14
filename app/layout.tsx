@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import RoutePrefetcher from "@/components/RoutePrefetcher";
 import { portfolio } from "@/data/portfolio";
 
 const sourceSerif = Source_Serif_4({
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sourceSerif.variable} ${inter.variable}`}>
       <body className="font-sans flex min-h-screen flex-col">
+        <RoutePrefetcher />
         <Header />
         <main className="flex-1 pt-[80px]">{children}</main>
         <Footer />

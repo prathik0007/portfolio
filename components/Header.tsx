@@ -14,7 +14,7 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-40 h-[80px] bg-white/95 backdrop-blur-md border-b border-surface-border">
         <div className="flex h-full w-full items-center justify-between px-4 sm:px-8 lg:px-12">
           {/* Logo / brand matching reference style */}
-          <Link href="/" className="flex items-center gap-3.5 group">
+          <Link href="/" prefetch={true} className="flex items-center gap-3.5 group">
             <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white font-serif text-2xl font-bold shadow-[0_6px_20px_rgba(37,99,235,0.35)] transition-all group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(37,99,235,0.45)]">
               {portfolio.initials}
             </span>
@@ -32,6 +32,7 @@ export default function Header() {
           <div className="flex items-center gap-3.5">
             <Link
               href="/contact"
+              prefetch={true}
               className="hidden sm:inline-flex items-center rounded-2xl bg-primary px-8 py-3 text-base font-bold text-white shadow-[0_8px_25px_rgba(37,99,235,0.35)] transition-all hover:bg-primary-dark hover:shadow-[0_10px_30px_rgba(37,99,235,0.45)] hover:-translate-y-0.5 active:translate-y-0"
             >
               Lets Connect

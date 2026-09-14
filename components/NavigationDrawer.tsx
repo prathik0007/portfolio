@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { X, Home, User, Rocket, FileText, Mail, Code2, Award, Terminal } from "lucide-react";
 import { navItems, portfolio } from "@/data/portfolio";
 
@@ -25,7 +25,21 @@ export default function NavigationDrawer({
   onClose: () => void;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Immediately prefetch all navigation routes when the drawer opens
+  useEffect(() => {
+    if (isOpen) {
+      navItems.forEach((item) => {
+        try {
+          router.prefetch(item.href);
+        } catch {
+          // ignore prefetch errors
+        }
+      });
+    }
+  }, [isOpen, router]);
 
   // Escape key closes the drawer
   useEffect(() => {
@@ -91,7 +105,13 @@ export default function NavigationDrawer({
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      prefetch={true}
                       onClick={onClose}
+                      onMouseEnter={() => {
+                        try {
+                          router.prefetch(item.href);
+                        } catch {}
+                      }}
                       aria-current={isActive ? "page" : undefined}
                       className={`group relative flex items-center gap-4 rounded-xl px-4 py-3.5 transition-colors ${
                         isActive

@@ -63,6 +63,7 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/projects"
+                prefetch={true}
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-card transition-all hover:bg-primary-dark hover:shadow-card-hover"
               >
                 <Rocket size={16} /> View Projects
@@ -76,6 +77,7 @@ export default function Hero() {
               </a>
               <Link
                 href="/contact"
+                prefetch={true}
                 className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary-light"
               >
                 <Send size={16} /> Hire Me
