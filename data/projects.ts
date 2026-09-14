@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     id: "github-repository-explainer",
     number: "02",
-    title: "GitHub Repository Explainer - AI Developer Tool",
+    title: "GitHub Repository Explainer",
     description:
       "An AI-powered developer tool that analyzes and inspects public GitHub codebases in seconds. Generates comprehensive technical overviews, component breakdowns, file-by-file explanations, and onboarding roadmaps for engineers.",
     images: [
