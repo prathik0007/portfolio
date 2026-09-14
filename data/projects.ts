@@ -118,4 +118,28 @@ export const projects: Project[] = [
     liveDemoUrl: "https://novamart-ecommerce-sigma.vercel.app/",
     sourceCodeUrl: "https://github.com/prathik0007/novamart-ecommerce",
   },
+  {
+    id: "project-management-tool",
+    number: "05",
+    title: "ProjectFlow — Collaborative Project Management Tool",
+    description:
+      "A modern, full-stack collaborative project and task management system built to streamline team workflows. Features interactive workspace dashboards with real-time project metrics, task creation and assignment modals with priority/status tagging, timeline scheduling, and personalized user account preferences.",
+    images: [
+      "/images/projectflow/projectflow-1.png",
+      "/images/projectflow/projectflow-2.png",
+      "/images/projectflow/projectflow-3.png",
+      "/images/projectflow/projectflow-4.png",
+      "/images/projectflow/projectflow-5.png",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST APIs",
+      "Vercel",
+    ],
+    liveDemoUrl: "https://project-management-tool-rust-rho.vercel.app/",
+    sourceCodeUrl: "https://github.com/prathik0007/project-management-tool",
+  },
 ];
