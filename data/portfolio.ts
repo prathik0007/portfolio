@@ -25,7 +25,7 @@ export const portfolio = {
     "Aspiring Application Developer with problem-solving skills and hands-on experience building web, Android, and backend applications. Passionate about creating real-world solutions and continuously growing as a developer.",
 
   // Personal details
-  email: "prathikganiga202@gmail.com",
+  email: "prathikganiga07@gmail.com",
   phone: "+91 9611914396",
   location: "Belthangady 574214, Mangalore, Karnataka, India",
   dateOfBirth: "April 22, 2005",
@@ -94,7 +94,7 @@ export const portfolio = {
 export const socialLinks = [
   { name: "GitHub", href: "https://github.com/prathik0007", icon: "github" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/prathik-b73793351", icon: "linkedin" },
-  { name: "Email", href: "mailto:prathikganiga202@gmail.com", icon: "mail" },
+  { name: "Email", href: "mailto:prathikganiga07@gmail.com", icon: "mail" },
   { name: "Phone", href: "tel:+919611914396", icon: "phone" },
   { name: "LeetCode", href: "https://leetcode.com/u/Prathik07/", icon: "code" },
 ] as const;

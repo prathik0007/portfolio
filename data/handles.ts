@@ -57,7 +57,7 @@ export const connectHandles = [
     id: "email",
     platform: "Email",
     subtitle: "Follow me on Email",
-    url: "mailto:prathikganiga202@gmail.com",
+    url: "mailto:prathikganiga07@gmail.com",
     icon: "email",
   },
   {
