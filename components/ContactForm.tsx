@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
 type FormState = {
   name: string;
@@ -17,7 +17,8 @@ const initialState: FormState = { name: "", email: "", phone: "", message: "" };
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [serverError, setServerError] = useState<string | null>(null);
 
   function validate(values: FormState): FormErrors {
     const next: FormErrors = {};
@@ -33,6 +34,10 @@ export default function ContactForm() {
 
   function handleChange(field: keyof FormState, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
+    if (status === "error") {
+      setStatus("idle");
+      setServerError(null);
+    }
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -41,13 +46,31 @@ export default function ContactForm() {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
 
-    // Placeholder submission handler.
-    // Replace this with a call to your email service or API route, e.g.:
-    // await fetch("/api/contact", { method: "POST", body: JSON.stringify(form) });
-    console.log("Contact form submitted:", form);
+    setStatus("loading");
+    setServerError(null);
 
-    setStatus("success");
-    setForm(initialState);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message. Please try again.");
+      }
+
+      setStatus("success");
+      setForm(initialState);
+    } catch (err: unknown) {
+      console.error("Contact submission error:", err);
+      setStatus("error");
+      setServerError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again later."
+      );
+    }
   }
 
   const inputClasses =
@@ -136,15 +159,38 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-primary-dark"
+        disabled={status === "loading"}
+        className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:bg-primary-dark disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Send Message <Send size={15} />
+        {status === "loading" ? (
+          <>
+            <Loader2 size={16} className="animate-spin" /> Sending Message...
+          </>
+        ) : (
+          <>
+            Send Message <Send size={15} />
+          </>
+        )}
       </button>
 
       {status === "success" && (
-        <p role="status" className="text-sm font-medium text-green-600">
-          Thanks for reaching out! Your message has been noted.
-        </p>
+        <div
+          role="status"
+          className="flex items-center gap-2.5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800 animate-fade-in"
+        >
+          <CheckCircle2 size={18} className="text-emerald-600 flex-none" />
+          <span>Thanks for reaching out! Your message has been sent to my inbox.</span>
+        </div>
+      )}
+
+      {status === "error" && (
+        <div
+          role="alert"
+          className="flex items-center gap-2.5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 animate-fade-in"
+        >
+          <AlertCircle size={18} className="text-red-600 flex-none" />
+          <span>{serverError || "Failed to send message. Please try again."}</span>
+        </div>
       )}
     </form>
   );
