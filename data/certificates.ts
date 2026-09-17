@@ -42,6 +42,28 @@ export const certificateCategories: CertificateCategory[] = [
 
 export const certificates: Certificate[] = [
   {
+    id: "codsoft-web-development-internship",
+    title: "Web Development Internship",
+    issuer: "CodSoft",
+    issueDate: "September 2026",
+    credentialId: "ace1bd3",
+    credentialUrl: "https://www.codsoft.in",
+    image: "/certificates/codsoft.png",
+    pdfUrl: "/certificates/codsoft.pdf",
+    category: "Internships & Experience",
+    skills: [
+      "Web Development",
+      "Frontend Development",
+      "HTML5 & CSS3",
+      "JavaScript",
+      "Responsive Design",
+      "Virtual Internship",
+    ],
+    description:
+      "Successfully completed a 4-week virtual internship program in Web Development from August 15, 2026 to September 15, 2026 at CodSoft, building web projects and demonstrating practical software engineering skills.",
+    featured: true,
+  },
+  {
     id: "oracle-cloud-infrastructure-2025",
     title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
     issuer: "Oracle University",
