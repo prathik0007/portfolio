@@ -19,7 +19,6 @@ export const education: EducationEntry[] = [
     institution: "Sacred Heart College, Madanthyar",
     university: "Mangalore University",
     years: "2022 - 2025",
-    grade: "CGPA: 8.08",
   },
   {
     id: "edu-2",
@@ -27,6 +26,5 @@ export const education: EducationEntry[] = [
     institution: "N.M.A.M Institute of Technology, Nitte",
     university: "Nitte University",
     years: "2025 - Present",
-    grade: "Current CGPA: 8.00 (Pursuing)",
   },
 ];
