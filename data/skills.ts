@@ -11,28 +11,32 @@ export interface SkillCategoryGroup {
 // Grouped skills formatted cleanly matching resume
 export const resumeSkillGroups: SkillCategoryGroup[] = [
   {
-    category: "Frontend",
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Next.js", "Tailwind CSS"],
+    category: "Programming Languages",
+    skills: ["Python", "Java", "C", "JavaScript"],
   },
   {
-    category: "Backend",
-    skills: ["Python", "Flask", "Django", "Node.js", "Express.js"],
+    category: "Web & Android Technologies",
+    skills: ["HTML", "CSS", "React.js", "MERN Stack", "Bootstrap", "Flutter", "React Native", "Next.js"],
   },
   {
-    category: "Database",
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+    category: "Backend Development",
+    skills: ["Node.js", "Express.js", "Flask"],
   },
   {
-    category: "Mobile",
-    skills: ["Flutter", "Dart", "Kotlin", "Firebase"],
+    category: "Databases",
+    skills: ["MongoDB", "MongoDB Atlas", "MySQL", "PostgreSQL"],
   },
   {
-    category: "Languages",
-    skills: ["Python", "Java", "C", "JavaScript", "Dart"],
+    category: "Cloud & Deployment",
+    skills: ["Vercel", "Render", "Domain Management", "DNS Configuration"],
   },
   {
-    category: "Others",
-    skills: ["Problem Solving", "Intermediate-DSA", "System Design", "Git / GitHub"],
+    category: "Development Tools",
+    skills: ["Git", "GitHub", "VS Code", "Visual Studio"],
+  },
+  {
+    category: "Additional Skills",
+    skills: ["Progressive Web Apps (PWA)", "Website SEO Optimization"],
   },
 ];
 
