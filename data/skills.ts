@@ -16,11 +16,32 @@ export const resumeSkillGroups: SkillCategoryGroup[] = [
   },
   {
     category: "Web & Android Technologies",
-    skills: ["HTML", "CSS", "React.js", "MERN Stack", "Bootstrap", "Flutter", "React Native", "Next.js"],
+    skills: [
+      "HTML5",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "MERN Stack",
+      "Flutter",
+      "React Native",
+      "Responsive Design",
+    ],
   },
   {
     category: "Backend Development",
-    skills: ["Node.js", "Express.js", "Flask"],
+    skills: [
+      "Python",
+      "Node.js",
+      "Express.js",
+      "Flask",
+      "REST APIs",
+      "JWT Authentication",
+      "API Integration",
+    ],
   },
   {
     category: "Databases",
@@ -32,11 +53,19 @@ export const resumeSkillGroups: SkillCategoryGroup[] = [
   },
   {
     category: "Development Tools",
-    skills: ["Git", "GitHub", "VS Code", "Visual Studio"],
+    skills: ["Git", "GitHub", "VS Code", "Visual Studio", "Docker"],
   },
   {
     category: "Additional Skills",
-    skills: ["Progressive Web Apps (PWA)", "Website SEO Optimization"],
+    skills: [
+      "Data Structures & Algorithms",
+      "Problem Solving",
+      "Object-Oriented Programming",
+      "DBMS",
+      "Operating Systems",
+      "Computer Networks",
+      "System Design",
+    ],
   },
 ];
 

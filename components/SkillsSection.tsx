@@ -36,9 +36,9 @@ export default function SkillsSection({ id = "skills" }: { id?: string }) {
                 {group.skills.map((skill) => (
                   <div
                     key={skill}
-                    className="flex h-12 w-[calc(50%-6px)] cursor-default items-center justify-center rounded-xl border border-surface-border bg-white px-3 text-center text-sm font-semibold text-ink shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary hover:shadow-card sm:h-13 sm:w-[160px] sm:rounded-2xl sm:text-[15px] md:w-[172px] lg:w-[180px]"
+                    className="flex h-12 min-w-[calc(50%-6px)] cursor-default items-center justify-center rounded-xl border border-surface-border bg-white px-4 text-center text-sm font-semibold text-ink shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary hover:shadow-card sm:h-13 sm:w-auto sm:min-w-[160px] sm:rounded-2xl sm:text-[15px]"
                   >
-                    <span className="truncate">{skill}</span>
+                    <span>{skill}</span>
                   </div>
                 ))}
               </div>
