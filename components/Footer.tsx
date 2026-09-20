@@ -83,20 +83,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar aligned with full width */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-surface-border pt-6 text-sm text-ink-soft sm:flex-row">
+        {/* Bottom bar */}
+        <div className="mt-12 border-t border-surface-border pt-6 text-center text-sm text-ink-soft">
           <p>
             © {new Date().getFullYear()} Portfolio. Made with{" "}
             <span className="text-primary">♥</span> by {portfolio.copyrightName}
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-primary transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>
