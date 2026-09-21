@@ -86,6 +86,27 @@ export const certificates: Certificate[] = [
     featured: true,
   },
   {
+    id: "mca-career-accelerator-programme",
+    title: "MCA Career Accelerator: Placement & Interview Readiness",
+    issuer: "NMAM Institute of Technology, Nitte (DU)",
+    issueDate: "September 2026",
+    credentialUrl: "/certificates/mca-career-accelerator.pdf",
+    image: "/certificates/mca-career-accelerator.png",
+    pdfUrl: "/certificates/mca-career-accelerator.pdf",
+    category: "Workshops & Training",
+    skills: [
+      "Placement Readiness",
+      "Interview Preparation",
+      "Career Development",
+      "Technical Aptitude",
+      "Soft Skills",
+      "Industry Readiness",
+    ],
+    description:
+      "Certificate of Participation in a four-day intensive workshop on 'MCA Career Accelerator: 4 Day Intensive Placement and Interview Readiness Programme' organized by the Department of MCA, NMAM Institute of Technology, Nitte (DU) in association with WENAMITAA.",
+    featured: true,
+  },
+  {
     id: "accelerating-deep-learning-with-gpus",
     title: "Accelerating Deep Learning with GPUs",
     issuer: "Cognitive Class (IBM Developer Skills Network)",
