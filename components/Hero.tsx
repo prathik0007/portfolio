@@ -113,7 +113,7 @@ export default function Hero() {
                   alt={`Portrait of ${portfolio.name}`}
                   fill
                   sizes="(max-width: 640px) 256px, (max-width: 1024px) 300px, 350px"
-                  className="object-cover object-[center_15%]"
+                  className="object-cover object-center"
                   priority
                   unoptimized
                 />

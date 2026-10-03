@@ -25,7 +25,7 @@ export default function AboutPage() {
             alt={`Portrait of ${portfolio.name}`}
             width={144}
             height={144}
-            className="h-full w-full object-cover object-[center_15%]"
+            className="h-full w-full object-cover object-center"
             priority
           />
         </div>
