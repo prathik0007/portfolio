@@ -27,7 +27,7 @@ export const resumeSkillGroups: SkillCategoryGroup[] = [
       "Bootstrap",
       "MERN Stack",
       "Flutter",
-      "React Native",
+      "Kotlin",
       "Responsive Design",
     ],
   },
