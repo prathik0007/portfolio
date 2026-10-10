@@ -162,7 +162,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const mobileProjects: Project[] = [
+export const androidProjects: Project[] = [
   {
     id: "campusconnect",
     number: "01",
@@ -185,5 +185,29 @@ export const mobileProjects: Project[] = [
     ],
     sourceCodeUrl: "https://github.com/prathik0007/CampusConnect",
   },
+  {
+    id: "ai-expense-tracker",
+    number: "02",
+    title: "AI Expense Tracker — Smart Finance & Budgeting App",
+    description:
+      "A smart personal finance and expense management mobile app built with Flutter and Firebase. Features AI-powered financial advisory with Gemini, interactive visual expense breakdowns, customizable monthly category budget caps, smart spending coaches, and voice & receipt logging.",
+    images: [
+      "/images/expensetracker/expensetracker-1.png",
+      "/images/expensetracker/expensetracker-2.png",
+      "/images/expensetracker/expensetracker-3.png",
+      "/images/expensetracker/expensetracker-4.png",
+      "/images/expensetracker/expensetracker-5.png",
+    ],
+    technologies: [
+      "Flutter",
+      "Firebase",
+      "Gemini AI",
+      "Dart",
+    ],
+    sourceCodeUrl: "https://github.com/prathik0007/flutter-finance-dashboard.",
+  },
 ];
+
+export const mobileProjects = androidProjects;
+
 

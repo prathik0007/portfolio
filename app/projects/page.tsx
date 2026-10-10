@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { portfolio } from "@/data/portfolio";
-import { projects, mobileProjects } from "@/data/projects";
+import { projects, androidProjects } from "@/data/projects";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -21,12 +21,12 @@ export default function ProjectsPage() {
         ))}
       </div>
 
-      {/* Mobile Development */}
+      {/* Android Development */}
       <div className="mt-20 pt-8 sm:mt-24">
-        <SectionHeading title="Mobile" highlight="Development" />
+        <SectionHeading title="Android" highlight="Development" />
 
         <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {mobileProjects.map((project) => (
+          {androidProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
@@ -34,4 +34,5 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
 
