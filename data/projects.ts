@@ -161,3 +161,29 @@ export const projects: Project[] = [
     sourceCodeUrl: "https://github.com/prathik0007/TasteBite",
   },
 ];
+
+export const mobileProjects: Project[] = [
+  {
+    id: "campusconnect",
+    number: "01",
+    title: "CampusConnect — Campus Event Management Platform",
+    description:
+      "A full-featured native Android campus event management platform. Features dual authentication with role-based access for Students and Organizers, event publishing with banner uploads, real-time organizer dashboards, attendee management, and live QR code ticket scanning.",
+    images: [
+      "/images/campusconnect/campusconnect-1.png",
+      "/images/campusconnect/campusconnect-2.png",
+      "/images/campusconnect/campusconnect-3.png",
+      "/images/campusconnect/campusconnect-4.png",
+      "/images/campusconnect/campusconnect-5.png",
+    ],
+    technologies: [
+      "Kotlin",
+      "Node.js",
+      "Firebase",
+      "MongoDB",
+      "Cloudinary",
+    ],
+    sourceCodeUrl: "https://github.com/prathik0007/CampusConnect",
+  },
+];
+
