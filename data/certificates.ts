@@ -42,6 +42,27 @@ export const certificateCategories: CertificateCategory[] = [
 
 export const certificates: Certificate[] = [
   {
+    id: "workshop-cloud-computing",
+    title: "Workshop on Cloud Computing",
+    issuer: "NMAM Institute of Technology, Nitte (DU)",
+    issueDate: "October 2026",
+    credentialUrl: "/certificates/cloud-computing-workshop.pdf",
+    image: "/certificates/cloud-computing-workshop.png",
+    pdfUrl: "/certificates/cloud-computing-workshop.pdf",
+    category: "Cloud & DevOps",
+    skills: [
+      "Cloud Computing",
+      "Cloud Architecture",
+      "Virtualization",
+      "Cloud Security",
+      "Infrastructure & Networking",
+      "Wipfli Collaboration",
+    ],
+    description:
+      "Certificate of Participation in a two-day workshop on 'Cloud Computing', organized by the Department of Master of Computer Applications, NMAM Institute of Technology, Nitte (DU) held on 6 and 7 October 2026 in association with Wipfli, Bangalore.",
+    featured: true,
+  },
+  {
     id: "codsoft-web-development-internship",
     title: "Web Development Internship",
     issuer: "CodSoft",
